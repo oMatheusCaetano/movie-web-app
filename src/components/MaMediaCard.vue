@@ -1,7 +1,7 @@
 <template>
   <div class="position-relative">
-    <div class="mediaRating position-absolute p-1 rounded-pill shadow-sm bg-dark">
-      <div class="p-1 rounded-pill bg-light">{{ media.vote_average }}</div>
+    <div class="mediaRating position-absolute p-1 rounded-circle shadow-sm bg-dark">
+      <div class="p-1 rounded-circle bg-light">{{ media.vote_average }}</div>
     </div>
     <router-link
       class="text-decoration-none font-weight-bold text-dark"
@@ -9,7 +9,7 @@
     >
       <img
         class="mb-3 rounded shadow-sm"
-        :src="`https://image.tmdb.org/t/p/w300/${this.media.poster_path}`"
+        :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
         alt="picture" />
       <span>{{ media.title }}</span>
     </router-link>
@@ -29,12 +29,8 @@ export default {
 </script>
 
 <style scoped>
-img {
-  height: 300px;
-}
-
 .mediaRating {
-  bottom: 70px;
+  bottom: 140px;
   left: 5px;
 }
 </style>
