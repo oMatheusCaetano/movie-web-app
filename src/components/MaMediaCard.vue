@@ -1,7 +1,7 @@
 <template>
   <div class="position-relative">
     <div class="mediaRating position-absolute p-1 rounded-circle shadow-sm bg-dark">
-      <div class="p-1 rounded-circle bg-light">{{ media.vote_average }}</div>
+      <div class="p-1 rounded-circle bg-light">{{ media.vote_average | formatRate }}</div>
     </div>
     <router-link
       class="text-decoration-none font-weight-bold text-dark"
@@ -13,7 +13,7 @@
         alt="picture" />
       <span>{{ media.title }}</span>
     </router-link>
-    <p class="text-secondary">{{ media.release_date }}</p>
+    <p class="text-secondary">{{ media.release_date | formatDate }}</p>
   </div>
 </template>
 
