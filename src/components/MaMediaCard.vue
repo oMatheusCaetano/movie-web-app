@@ -10,7 +10,7 @@
       <img class="mb-3 rounded shadow-sm" src="../assets/test/actor3.jpg" alt="picture" />
       <span>{{ media.title }}</span>
     </router-link>
-    <p>{{ media.date }}</p>
+    <p class="text-secondary">{{ media.date }}</p>
   </div>
 </template>
 

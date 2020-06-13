@@ -1,7 +1,9 @@
 <template>
   <div>
     <ma-navbar />
-    <ma-scroller />
+    <div class="px-3">
+      <ma-scroller class="" />
+    </div>
   </div>
 </template>
 
