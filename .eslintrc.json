@@ -21,6 +21,7 @@
     "rules": {
         "semi": ["error", "never"],
         "quotes": ["error", "single"],
-        "no-plusplus": "off"
+        "no-plusplus": "off",
+        "no-param-reassign": "off"
     }
 }

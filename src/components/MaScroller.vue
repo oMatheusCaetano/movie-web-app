@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-auto d-flex">
-    <ma-media-card class="mx-1" v-for="item in array" :key="item" />
+    <ma-media-card class="mx-1" v-for="movie in popularMovies" :key="movie.id" :media="movie" />
   </div>
 </template>
 
@@ -12,12 +12,14 @@ export default {
     MaMediaCard,
   },
 
-  data: () => ({
-    array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-  }),
+  computed: {
+    popularMovies() {
+      return this.$store.state.popularMovies
+    },
+  },
+
+  created() {
+    this.$store.dispatch('popularMovies')
+  },
 }
 </script>
-
-<style>
-
-</style>

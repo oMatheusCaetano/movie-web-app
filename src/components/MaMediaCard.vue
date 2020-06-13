@@ -1,28 +1,30 @@
 <template>
   <div class="position-relative">
     <div class="mediaRating position-absolute p-1 rounded-pill shadow-sm bg-dark">
-      <div class="p-1 rounded-pill bg-light">{{ media.rate }}</div>
+      <div class="p-1 rounded-pill bg-light">{{ media.vote_average }}</div>
     </div>
     <router-link
       class="text-decoration-none font-weight-bold text-dark"
       to="#"
     >
-      <img class="mb-3 rounded shadow-sm" src="../assets/test/actor3.jpg" alt="picture" />
+      <img
+        class="mb-3 rounded shadow-sm"
+        :src="`https://image.tmdb.org/t/p/w300/${this.media.poster_path}`"
+        alt="picture" />
       <span>{{ media.title }}</span>
     </router-link>
-    <p class="text-secondary">{{ media.date }}</p>
+    <p class="text-secondary">{{ media.release_date }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  data: () => ({
+  props: {
     media: {
-      title: 'Brahms: Boneco do Mal II',
-      date: 'Jul 05, 2017',
-      rate: '7.5',
+      type: Object,
+      required: true,
     },
-  }),
+  },
 }
 </script>
 
