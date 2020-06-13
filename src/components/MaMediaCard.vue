@@ -4,11 +4,11 @@
       <div class="p-1 rounded-circle bg-light">{{ media.vote_average | formatRate }}</div>
     </div>
     <router-link
-      class="text-decoration-none font-weight-bold text-dark"
+      class=" text-decoration-none font-weight-bold text-dark"
       to="#"
     >
       <img
-        class="mb-3 rounded shadow-sm"
+        class="mediaImage mb-3 rounded shadow-sm"
         :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
         alt="picture" />
       <span>{{ media.title }}</span>
@@ -28,9 +28,18 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .mediaRating {
-  bottom: 140px;
+  z-index: 1;
   left: 5px;
+  bottom: 140px;
+}
+
+.mediaImage {
+  transition: .2s;
+
+  &:hover {
+    filter: brightness(50%);
+  }
 }
 </style>
