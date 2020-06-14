@@ -4,12 +4,7 @@
 
 <script>
 export default {
-  props: {
-    data: {
-      type: Array,
-      requid: true,
-    },
-  },
+  props: ['data', 'width'],
 
   data: () => ({
     options: {
@@ -24,8 +19,8 @@ export default {
       size: {
         fontSize: 1,
         height: 2,
-        padding: 0,
         width: 30,
+        padding: 0,
       },
       items: {
         delay: 0.5,
@@ -44,6 +39,7 @@ export default {
 
   created() {
     this.options.items.labels = this.data
+    this.options.size.width = this.width
   },
 }
 </script>
