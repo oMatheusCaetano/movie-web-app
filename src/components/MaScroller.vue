@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-auto d-flex">
-    <ma-media-card class="mx-1" v-for="movie in popularMovies" :key="movie.id" :media="movie" />
+    <ma-media-card class="mx-1" v-for="movie in popularMedia" :key="movie.id" :media="movie" />
   </div>
 </template>
 
@@ -13,13 +13,13 @@ export default {
   },
 
   computed: {
-    popularMovies() {
-      return this.$store.state.popularMovies
+    popularMedia() {
+      return this.$store.state.popularMedia
     },
   },
 
   created() {
-    this.$store.dispatch('popularMovies')
+    this.$store.dispatch('popularMedia', 'movies')
   },
 }
 </script>

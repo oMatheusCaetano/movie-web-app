@@ -1,5 +1,5 @@
 export default {
-  setPopularMovies(state, popularMovies) {
-    state.popularMovies = popularMovies
+  setPopularMedia(state, popularMedia) {
+    state.popularMedia = popularMedia
   },
 }
