@@ -69,9 +69,11 @@ export default {
   },
 
   created() {
+    this.$Progress.start()
     this.$store.dispatch('popularMedia', 'movies')
     this.$store.dispatch('trendingMovies', 'day')
     this.$store.dispatch('trendingTv', 'day')
+    this.$Progress.finish()
   },
 }
 </script>
