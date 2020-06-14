@@ -3,7 +3,7 @@
     <ma-navbar />
     <div class="px-3">
       <div class="d-flex flex-wrap">
-        <ma-title class="col-12 col-md-4 col-lg-2" text="What's Popular" />
+        <h2 class="col-12 col-md-4 col-lg-2 h3">What's Popular</h2>
         <ma-category-switcher
           class="col-12 col-md-8 col-lg-10"
           width="20"
@@ -17,14 +17,12 @@
 
 <script>
 import MaNavbar from '../components/MaNavbar.vue'
-import MaTitle from '../components/MaTitle.vue'
 import MaCategorySwitcher from '../components/MaCategorySwitcher.vue'
 import MaScroller from '../components/MaScroller.vue'
 
 export default {
   components: {
     MaNavbar,
-    MaTitle,
     MaCategorySwitcher,
     MaScroller,
   },
