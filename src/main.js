@@ -6,6 +6,8 @@ import './bootstrap'
 
 Vue.config.productionTip = false
 
+window.EventBus = new Vue()
+
 new Vue({
   router,
   store,

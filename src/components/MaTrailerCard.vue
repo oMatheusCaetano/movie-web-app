@@ -2,6 +2,8 @@
   <div>
     <div
       class="imageBackground position-relative"
+      data-toggle="modal"
+      data-target="#trailerModal"
       @mouseenter="zoom = true"
       @mouseleave="zoom = false"
     >
@@ -12,7 +14,7 @@
         <font-awesome-icon icon="play" />
       </span>
       <img
-        class="imageBackground_image rounded mx-2"
+        class="imageBackground_image rounded mx-2 shadow"
         src="../assets/test/image3.jpg"
         alt="movie-image"
         :class="{ zoom: zoom }"
@@ -24,12 +26,18 @@
     <div class="text-center text-white">
       <span>[Architects, Animals As Leaders, Periphery, FEVER333]</span>
     </div>
-    <!-- <iframe src="https://www.youtube.com/embed/lYAfhjudtSg" frameborder="0"></iframe> -->
+    <ma-trailer-frame />
   </div>
 </template>
 
 <script>
+import MaTrailerFrame from './MaTrailerFrame.vue'
+
 export default {
+  components: {
+    MaTrailerFrame,
+  },
+
   data: () => ({
     zoom: false,
   }),
