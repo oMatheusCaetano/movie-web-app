@@ -7,17 +7,17 @@
         {{ media.vote_average | formatRate }}
       </div>
     </div>
-    <router-link
-      class=" text-decoration-none font-weight-bold text-dark"
-      to="#"
-    >
-      <img
-        class="mediaImage mb-3 rounded shadow-sm"
-        :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
-        alt="picture"
-      />
-      <span>{{ titleOrName() }}</span>
-    </router-link>
+      <router-link
+        class=" text-decoration-none font-weight-bold text-dark"
+        to="#"
+      >
+        <img
+          class="mediaImage mb-3 rounded shadow-sm"
+          :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
+          alt="picture"
+        />
+        <span>{{ titleOrName() }}</span>
+      </router-link>
     <p class="text-secondary">{{ date() | formatDate }}</p>
   </div>
 </template>
@@ -51,10 +51,11 @@ export default {
 }
 
 .mediaImage {
-  transition: 0.2s;
+  transition: 0.3s;
 
   &:hover {
     filter: brightness(50%);
   }
 }
+
 </style>

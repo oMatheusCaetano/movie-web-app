@@ -15,6 +15,10 @@
     </div>
 
     <div class="px-3">
+      <ma-video-scroller/>
+    </div>
+
+    <div class="px-3">
       <div class="d-flex flex-wrap">
         <h2 class="col-12 col-md-4 col-lg-3 h3">Trending Movies</h2>
         <ma-category-switcher
@@ -46,12 +50,14 @@
 import MaNavbar from '../components/MaNavbar.vue'
 import MaCategorySwitcher from '../components/MaCategorySwitcher.vue'
 import MaScroller from '../components/MaScroller.vue'
+import MaVideoScroller from '../components/MaVideoScroller.vue'
 
 export default {
   components: {
     MaNavbar,
     MaCategorySwitcher,
     MaScroller,
+    MaVideoScroller,
   },
 
   computed: {
