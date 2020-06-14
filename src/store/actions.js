@@ -5,4 +5,14 @@ export default {
     const { data } = await Api.get(`${type}/popular`)
     context.commit('setPopularMedia', data)
   },
+
+  async trendingMovies(context, timeWindow) {
+    const { data } = await Api.get(`movies/trending/${timeWindow}`)
+    context.commit('setTrendingMovies', data)
+  },
+
+  async trendingTv(context, timeWindow) {
+    const { data } = await Api.get(`tv/trending/${timeWindow}`)
+    context.commit('setTrendingTv', data)
+  },
 }

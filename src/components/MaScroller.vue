@@ -1,6 +1,11 @@
 <template>
   <div class="overflow-auto d-flex">
-    <ma-media-card class="mx-1" v-for="movie in popularMedia" :key="movie.id" :media="movie" />
+    <ma-media-card
+      class="mx-1"
+      v-for="movie in media"
+      :key="movie.id"
+      :media="movie"
+    />
   </div>
 </template>
 
@@ -8,18 +13,14 @@
 import MaMediaCard from './MaMediaCard.vue'
 
 export default {
-  components: {
-    MaMediaCard,
-  },
-
-  computed: {
-    popularMedia() {
-      return this.$store.state.popularMedia
+  props: {
+    media: {
+      type: Array,
+      required: true,
     },
   },
-
-  created() {
-    this.$store.dispatch('popularMedia', 'movies')
+  components: {
+    MaMediaCard,
   },
 }
 </script>
