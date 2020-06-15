@@ -12,7 +12,7 @@
         to="#"
       >
         <img
-          class="mediaImage mb-3 rounded shadow-sm"
+          class="mediaImage mb-3 rounded shadow"
           alt="picture"
           :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
         />

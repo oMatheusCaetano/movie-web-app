@@ -1,8 +1,11 @@
 <template>
   <div>
     <ma-navbar />
-    <div class="px-3 pt-4">
-      <div class="d-flex flex-wrap py-3">
+
+    <ma-carousel />
+
+    <div class="px-3 pt-4 bg-light">
+      <div class="d-flex flex-wrap py-3 bg-light">
         <h2 class="col-12 col-md-4 col-lg-2 h3 text-default-dark">
           <font-awesome-icon class="text-danger" icon="heart" />
           What's Popular
@@ -19,10 +22,10 @@
 
     <ma-video-scroller class="my-5 rounded mx-1" :media="upcomingMedia" />
 
-    <div class="px-3 pt-4">
-      <div class="d-flex flex-wrap py-3">
+    <div class="px-3 pt-4 bg-light">
+      <div class="d-flex flex-wrap py-3 bg-light">
         <h2 class="col-12 col-md-4 col-lg-2 h3 text-default-dark">
-          <font-awesome-icon class="text-danger" icon="fire" />
+          <font-awesome-icon class="text-info" icon="fire" />
           Trending Movies
         </h2>
         <ma-category-switcher
@@ -35,10 +38,10 @@
       <ma-scroller :media="trendingMovies" />
     </div>
 
-    <div class="px-3 pt-4">
-      <div class="d-flex flex-wrap py-3">
+    <div class="px-3 pt-4 bg-light">
+      <div class="d-flex flex-wrap py-3 bg-light">
         <h2 class="col-12 col-md-4 col-lg-2 h3 text-default-dark">
-          <font-awesome-icon class="text-danger" icon="fire" />
+          <font-awesome-icon class="text-info" icon="fire" />
           Trending TV
         </h2>
         <ma-category-switcher
@@ -55,6 +58,7 @@
 
 <script>
 import MaNavbar from '../components/MaNavbar.vue'
+import MaCarousel from '../components/MaCarousel.vue'
 import MaCategorySwitcher from '../components/MaCategorySwitcher.vue'
 import MaScroller from '../components/MaScroller.vue'
 import MaVideoScroller from '../components/MaVideoScroller.vue'
@@ -62,6 +66,7 @@ import MaVideoScroller from '../components/MaVideoScroller.vue'
 export default {
   components: {
     MaNavbar,
+    MaCarousel,
     MaCategorySwitcher,
     MaScroller,
     MaVideoScroller,

@@ -10,9 +10,9 @@ export default {
     options: {
       layout: {
         color: '#2c3e50',
-        backgroundColor: 'whitesmoke',
+        backgroundColor: '#ebe8e8',
         selectedColor: 'white',
-        selectedBackgroundColor: '#06648f',
+        selectedBackgroundColor: '#003750',
         fontWeightSelected: 'bold',
         noBorder: true,
       },
