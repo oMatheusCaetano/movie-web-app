@@ -16,7 +16,12 @@
           :src="`https://www.youtube.com/embed/${video.key}`"
           v-if="video"
         ></iframe>
-        <button class="btn" @click="close()">Close</button>
+        <button
+          class="btn bg-gradient text-white text-uppercase font-weight-bold"
+          @click="close()"
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>

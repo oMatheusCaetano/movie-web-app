@@ -25,7 +25,7 @@
       <span>{{ media.title }}</span>
     </div>
     <div class="text-center text-white">
-      <span>{{ media.release_Date | formatDate }}</span>
+      <span class="text-secondary">{{ media.release_Date | formatDate }}</span>
     </div>
     <ma-trailer-frame />
   </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="position-relative">
     <div
-      class="mediaRating position-absolute p-1 rounded-circle shadow-sm bg-dark"
+      class="mediaRating position-absolute p-1 rounded-circle shadow-sm bg-gradient"
     >
       <div class="p-1 rounded-circle bg-light">
         {{ media.vote_average | formatRate }}
@@ -16,7 +16,7 @@
           alt="picture"
           :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
         />
-        <span>{{ titleOrName() }}</span>
+        <span class="text-default-dark">{{ titleOrName() }}</span>
       </router-link>
     <p class="text-secondary">{{ date() | formatDate }}</p>
   </div>
@@ -48,6 +48,8 @@ export default {
 <style lang="scss" scoped>
 .mediaRating {
   z-index: 1;
+  top: 3px;
+  left: 3px;
 }
 
 .mediaImage {

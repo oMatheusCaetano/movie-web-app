@@ -9,12 +9,12 @@ export default {
   data: () => ({
     options: {
       layout: {
-        color: 'black',
-        backgroundColor: 'white',
+        color: '#2c3e50',
+        backgroundColor: 'whitesmoke',
         selectedColor: 'white',
-        selectedBackgroundColor: 'gray',
+        selectedBackgroundColor: '#06648f',
         fontWeightSelected: 'bold',
-        noBorder: false,
+        noBorder: true,
       },
       size: {
         fontSize: 1,

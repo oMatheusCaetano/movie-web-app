@@ -1,9 +1,12 @@
 <template>
   <div>
     <ma-navbar />
-    <div class="px-3">
-      <div class="d-flex flex-wrap">
-        <h2 class="col-12 col-md-4 col-lg-2 h3">What's Popular</h2>
+    <div class="px-3 pt-4">
+      <div class="d-flex flex-wrap py-3">
+        <h2 class="col-12 col-md-4 col-lg-2 h3 text-default-dark">
+          <font-awesome-icon class="text-danger" icon="heart" />
+          What's Popular
+        </h2>
         <ma-category-switcher
           class="col-12 col-md-8 col-lg-10"
           width="20"
@@ -14,13 +17,14 @@
       <ma-scroller :media="popularMedia" />
     </div>
 
-    <div class="px-3">
-      <ma-video-scroller :media="upcomingMedia" />
-    </div>
+    <ma-video-scroller class="my-5 rounded mx-1" :media="upcomingMedia" />
 
-    <div class="px-3">
-      <div class="d-flex flex-wrap">
-        <h2 class="col-12 col-md-4 col-lg-3 h3">Trending Movies</h2>
+    <div class="px-3 pt-4">
+      <div class="d-flex flex-wrap py-3">
+        <h2 class="col-12 col-md-4 col-lg-2 h3 text-default-dark">
+          <font-awesome-icon class="text-danger" icon="fire" />
+          Trending Movies
+        </h2>
         <ma-category-switcher
           class="col-12 col-md-8 col-lg-19"
           width="20"
@@ -31,9 +35,12 @@
       <ma-scroller :media="trendingMovies" />
     </div>
 
-    <div class="px-3">
-      <div class="d-flex flex-wrap">
-        <h2 class="col-12 col-md-4 col-lg-2 h3">Trending TV</h2>
+    <div class="px-3 pt-4">
+      <div class="d-flex flex-wrap py-3">
+        <h2 class="col-12 col-md-4 col-lg-2 h3 text-default-dark">
+          <font-awesome-icon class="text-danger" icon="fire" />
+          Trending TV
+        </h2>
         <ma-category-switcher
           class="col-12 col-md-8 col-lg-10"
           width="20"

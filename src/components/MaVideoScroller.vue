@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <div class="scroller overflow-auto bg-dark d-flex align-items-center">
+  <div class="scroller pt-3 bg-gradient">
+    <h2 class="h3 text-white ml-5">Today</h2>
+    <div class="scroller_items overflow-auto d-flex align-items-center">
       <ma-trailer-card v-for="movie in media" :key="movie.id" :media="movie" />
     </div>
   </div>
@@ -25,7 +26,10 @@ export default {
 
 <style lang="scss" scoped>
 .scroller {
-  height: 400px;
-  width: 100%;
+
+  &_items {
+    height: 350px;
+    width: 100%;
+  }
 }
 </style>
