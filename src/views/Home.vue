@@ -1,7 +1,5 @@
 <template>
   <div>
-    <ma-navbar />
-
     <ma-carousel />
 
     <div class="px-3 pt-4 bg-light">
@@ -53,23 +51,25 @@
       </div>
       <ma-scroller :media="trendingTvShows" />
     </div>
+
+    <ma-footer class="mt-5"/>
   </div>
 </template>
 
 <script>
-import MaNavbar from '../components/MaNavbar.vue'
 import MaCarousel from '../components/MaCarousel.vue'
 import MaCategorySwitcher from '../components/MaCategorySwitcher.vue'
 import MaScroller from '../components/MaScroller.vue'
 import MaVideoScroller from '../components/MaVideoScroller.vue'
+import MaFooter from '../components/MaFooter.vue'
 
 export default {
   components: {
-    MaNavbar,
     MaCarousel,
     MaCategorySwitcher,
     MaScroller,
     MaVideoScroller,
+    MaFooter,
   },
 
   computed: {

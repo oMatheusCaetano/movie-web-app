@@ -14,7 +14,10 @@
         :key="index"
         v-for="(image, index) in images"
       >
-        <div class="d-flex flex-wrap align-items-center bg-dark">
+        <div
+          class="d-flex flex-wrap align-items-center bg-dark"
+          v-if="image.backdrop_path"
+        >
           <img
             class="img d-block mx-auto"
             :src="`https://image.tmdb.org/t/p/original/${image.backdrop_path}`"

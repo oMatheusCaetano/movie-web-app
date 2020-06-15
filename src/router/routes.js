@@ -6,4 +6,10 @@ export default [
     name: 'Home',
     component: Home,
   },
+
+  {
+    path: '/about-media',
+    name: 'AboutMedia',
+    component: () => import(/* webpackChunkName: "about" */ '../views/AboutMedia.vue'),
+  },
 ]

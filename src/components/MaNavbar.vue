@@ -1,7 +1,9 @@
 <template>
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <router-link class="navbar-brand" :to="{ name: 'Home' }">
+        MovieWebApp
+      </router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -16,27 +18,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <router-link class="nav-link" :to="{ name: 'Home' }">
+              Home
+              <span class="sr-only">(current)</span>
+            </router-link>
           </li>
         </ul>
       </div>
     </nav>
   </div>
 </template>
-
-<script>
-export default {}
-</script>
-
-<style></style>

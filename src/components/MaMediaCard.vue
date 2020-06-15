@@ -9,7 +9,7 @@
     </div>
       <router-link
         class=" text-decoration-none font-weight-bold text-dark"
-        to="#"
+        :to="{ name: 'AboutMedia' }"
       >
         <img
           class="mediaImage mb-3 rounded shadow"
