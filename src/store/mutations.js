@@ -3,6 +3,10 @@ export default {
     state.popularMedia = popularMedia
   },
 
+  setUpcomingMedia(state, upcomingMedia) {
+    state.upcomingMedia = upcomingMedia
+  },
+
   setTrendingMovies(state, trendingMovies) {
     state.trendingMovies = trendingMovies
   },

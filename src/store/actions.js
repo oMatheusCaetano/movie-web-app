@@ -6,6 +6,11 @@ export default {
     context.commit('setPopularMedia', data)
   },
 
+  async upcomingMedia(context) {
+    const { data } = await Api.get('movies/upcoming')
+    context.commit('setUpcomingMedia', data)
+  },
+
   async trendingMovies(context, timeWindow) {
     const { data } = await Api.get(`movies/trending/${timeWindow}`)
     context.commit('setTrendingMovies', data)

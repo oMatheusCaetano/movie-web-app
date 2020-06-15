@@ -15,7 +15,7 @@
     </div>
 
     <div class="px-3">
-      <ma-video-scroller/>
+      <ma-video-scroller :media="upcomingMedia" />
     </div>
 
     <div class="px-3">
@@ -65,6 +65,10 @@ export default {
       return this.$store.state.popularMedia
     },
 
+    upcomingMedia() {
+      return this.$store.state.upcomingMedia
+    },
+
     trendingMovies() {
       return this.$store.state.trendingMovies
     },
@@ -77,6 +81,7 @@ export default {
   created() {
     this.$Progress.start()
     this.$store.dispatch('popularMedia', 'movies')
+    this.$store.dispatch('upcomingMedia')
     this.$store.dispatch('trendingMovies', 'day')
     this.$store.dispatch('trendingTv', 'day')
     this.$Progress.finish()

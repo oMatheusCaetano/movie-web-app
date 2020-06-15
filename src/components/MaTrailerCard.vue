@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="media.backdrop_path !== null">
     <div
       class="imageBackground position-relative"
       data-toggle="modal"
@@ -15,16 +15,16 @@
       </span>
       <img
         class="imageBackground_image rounded mx-2 shadow"
-        src="../assets/test/image3.jpg"
+        :src="`https://image.tmdb.org/t/p/w400/${this.media.backdrop_path}`"
         alt="movie-image"
         :class="{ zoom: zoom }"
       />
     </div>
     <div class="text-center text-white font-weight-bold mt-3">
-      <span>METALCORE MASH-UP</span>
+      <span>{{ media.title }}</span>
     </div>
     <div class="text-center text-white">
-      <span>[Architects, Animals As Leaders, Periphery, FEVER333]</span>
+      <span>{{ media.release_Date | formatDate }}</span>
     </div>
     <ma-trailer-frame />
   </div>
@@ -38,6 +38,13 @@ export default {
     MaTrailerFrame,
   },
 
+  props: {
+    media: {
+      type: Object,
+      required: true,
+    },
+  },
+
   data: () => ({
     zoom: false,
   }),
@@ -47,10 +54,6 @@ export default {
 <style lang="scss" scoped>
 .imageBackground {
   cursor: pointer;
-
-  &_image {
-    width: 400px;
-  }
 
   &_icon {
     left: 47%;

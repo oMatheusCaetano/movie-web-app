@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="scroller overflow-auto bg-dark d-flex align-items-center">
-      <ma-trailer-card v-for="item in array" :key="item" />
+      <ma-trailer-card v-for="movie in media" :key="movie.id" :media="movie" />
     </div>
   </div>
 </template>
@@ -14,9 +14,12 @@ export default {
     MaTrailerCard,
   },
 
-  data: () => ({
-    array: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-  }),
+  props: {
+    media: {
+      type: Array,
+      required: true,
+    },
+  },
 }
 </script>
 
