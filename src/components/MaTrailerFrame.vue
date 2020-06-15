@@ -11,9 +11,10 @@
       <div class="modal-content">
         <iframe
           class="h-100"
-          src="https://www.youtube.com/embed/lYAfhjudtSg"
           allowfullscreen
           frameborder="0"
+          :src="`https://www.youtube.com/embed/${video.key}`"
+          v-if="video"
         ></iframe>
         <button class="btn" @click="close()">Close</button>
       </div>
@@ -27,6 +28,12 @@ export default {
     close() {
       window.$('#trailerModal').remove()
       window.$('.modal-backdrop').remove()
+    },
+  },
+
+  computed: {
+    video() {
+      return this.$store.state.videos[0]
     },
   },
 }

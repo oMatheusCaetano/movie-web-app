@@ -6,6 +6,7 @@
       data-target="#trailerModal"
       @mouseenter="zoom = true"
       @mouseleave="zoom = false"
+      @click="getVideo()"
     >
       <span
         class="imageBackground_icon position-absolute text-white"
@@ -48,6 +49,12 @@ export default {
   data: () => ({
     zoom: false,
   }),
+
+  methods: {
+    getVideo() {
+      this.$store.dispatch('videos', this.media.id)
+    },
+  },
 }
 </script>
 

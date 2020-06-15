@@ -11,6 +11,11 @@ export default {
     context.commit('setUpcomingMedia', data)
   },
 
+  async videos(context, id) {
+    const { data } = await Api.get(`movies/${id}/videos`)
+    context.commit('setVideos', data)
+  },
+
   async trendingMovies(context, timeWindow) {
     const { data } = await Api.get(`movies/trending/${timeWindow}`)
     context.commit('setTrendingMovies', data)

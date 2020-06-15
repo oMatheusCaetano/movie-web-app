@@ -7,6 +7,10 @@ export default {
     state.upcomingMedia = upcomingMedia
   },
 
+  setVideos(state, videos) {
+    state.videos = videos
+  },
+
   setTrendingMovies(state, trendingMovies) {
     state.trendingMovies = trendingMovies
   },

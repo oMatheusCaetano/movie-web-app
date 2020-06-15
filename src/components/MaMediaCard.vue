@@ -13,8 +13,8 @@
       >
         <img
           class="mediaImage mb-3 rounded shadow-sm"
-          :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
           alt="picture"
+          :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
         />
         <span>{{ titleOrName() }}</span>
       </router-link>
