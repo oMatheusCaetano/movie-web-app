@@ -1,6 +1,5 @@
 <template>
   <div>
-    <ma-pre-loader />
 
     <ma-carousel />
 
@@ -59,7 +58,6 @@
 </template>
 
 <script>
-import MaPreLoader from '../components/MaPreLoader.vue'
 import MaCarousel from '../components/MaCarousel.vue'
 import MaCategorySwitcher from '../components/MaCategorySwitcher.vue'
 import MaScroller from '../components/MaScroller.vue'
@@ -68,7 +66,6 @@ import MaFooter from '../components/MaFooter.vue'
 
 export default {
   components: {
-    MaPreLoader,
     MaCarousel,
     MaCategorySwitcher,
     MaScroller,

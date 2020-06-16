@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <ma-pre-loader />
     <ma-navbar />
     <transition name="fader">
       <router-view />
@@ -9,10 +10,12 @@
 </template>
 
 <script>
+import MaPreLoader from './components/MaPreLoader.vue'
 import MaNavbar from './components/MaNavbar.vue'
 
 export default {
   components: {
+    MaPreLoader,
     MaNavbar,
   },
 }
