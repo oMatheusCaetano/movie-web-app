@@ -1,4 +1,8 @@
 export default {
+  setCurrentMedia(state, currentMedia) {
+    state.currentMedia = currentMedia
+  },
+
   setPopularMedia(state, popularMedia) {
     state.popularMedia = popularMedia
   },

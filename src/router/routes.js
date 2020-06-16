@@ -8,7 +8,7 @@ export default [
   },
 
   {
-    path: '/about-media',
+    path: '/about-media/:media_type/:media_id',
     name: 'AboutMedia',
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutMedia.vue'),
   },

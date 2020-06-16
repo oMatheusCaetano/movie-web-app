@@ -1,6 +1,11 @@
 import Api from '../services/api'
 
 export default {
+  async showMedia(context, params) {
+    const { data } = await Api.get(`${params.media_type}/about/${params.media_id}`)
+    context.commit('setCurrentMedia', data)
+  },
+
   async popularMedia(context, type) {
     const { data } = await Api.get(`${type}/popular`)
     context.commit('setPopularMedia', data)

@@ -1,15 +1,14 @@
 <template>
   <div>
-    <h2>Esta será a tela com informaçãoes de um filmes ou serie</h2>
   </div>
 </template>
 
 <script>
 export default {
-
+  created() {
+    this.$store.dispatch('showMedia', this.$route.params)
+  },
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

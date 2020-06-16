@@ -1,5 +1,5 @@
 <template>
-  <div class="position-relative">
+  <div class="position-relative" v-if="this.media.poster_path">
     <div
       class="mediaRating position-absolute p-1 rounded-circle shadow-sm bg-gradient"
     >
@@ -9,7 +9,7 @@
     </div>
       <router-link
         class=" text-decoration-none font-weight-bold text-dark"
-        :to="{ name: 'AboutMedia' }"
+        :to="{ name: 'AboutMedia', params: { media_type: movieOrTvShow(), media_id: media.id } }"
       >
         <img
           class="mediaImage mb-3 rounded shadow"
@@ -32,6 +32,10 @@ export default {
   },
 
   methods: {
+    movieOrTvShow() {
+      return this.media.title ? 'movies' : 'tv'
+    },
+
     titleOrName() {
       return this.media.title ? this.media.title : this.media.name
     },
