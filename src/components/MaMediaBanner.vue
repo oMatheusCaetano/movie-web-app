@@ -11,29 +11,61 @@
         />
       </div>
       <div class="text-white col-12 col-lg-8 col-xl-7">
-        <div class="">
-          <h2>
-            <span class="font-weight-bold mr-2">{{ titleOrName() }}</span>
-            <span class="text-secondary">({{ date() | formatYear }})</span>
-          </h2>
-          <h4>Overview</h4>
-          <p>{{ media.overview }}</p>
-          <div class="d-flex flex-wrap">
-            <div class="col-4" v-for="(person, index) in media.credits.crew" :key="person.id">
-              <span v-if="index <= 2">
-                <h5 class="personName mt-3">{{ person.name }}</h5>
-                <span class="personJob">{{ person.job }}</span>
-              </span>
-            </div>
+        <h2>
+          <span class="font-weight-bold mr-2">{{ titleOrName() }}</span>
+          <span class="text-secondary">({{ date() | formatYear }})</span>
+        </h2>
+        <p class="mediaGenders mb-5">
+          <span
+            class="mr-1"
+            v-for="(genre, index) in media.genres"
+            :key="genre.id"
+          >
+            {{
+              index === media.genres.length - 1 ? genre.name : `${genre.name},`
+            }} </span
+          >| <span class="mr-1">{{ `${media.runtime}min` }}</span
+          >|
+          <span>{{ media.vote_average }}</span>
+        </p>
+        <h4>Overview</h4>
+        <p>{{ media.overview }}</p>
+        <div class="d-flex flex-wrap">
+          <div
+            class="col-4"
+            v-for="(person, index) in media.credits.crew"
+            :key="person.title"
+          >
+            <span v-if="index <= 2">
+              <h5 class="personName mt-3">{{ person.name }}</h5>
+              <span class="personJob">{{ person.job }}</span>
+            </span>
           </div>
         </div>
+        <button
+          class="btn btn-dark-blue bg-gradient mt-5"
+          data-toggle="modal"
+          data-target="#trailerModal"
+          @click="defineVideo()"
+        >
+          <font-awesome-icon icon="play" />
+          Watch Trailer
+        </button>
       </div>
     </div>
+
+    <ma-trailer-frame />
   </div>
 </template>
 
 <script>
+import MaTrailerFrame from './MaTrailerFrame.vue'
+
 export default {
+  components: {
+    MaTrailerFrame,
+  },
+
   computed: {
     media() {
       return this.$store.state.currentMedia
@@ -41,6 +73,10 @@ export default {
   },
 
   methods: {
+    defineVideo() {
+      this.$store.commit('setVideos', this.media.videos.results)
+    },
+
     titleOrName() {
       return this.media.title ? this.media.title : this.media.name
     },
@@ -83,10 +119,13 @@ export default {
     height: 500px;
   }
 
+  .mediaGenders {
+    line-height: 2px;
+  }
+
   .personName {
     font-size: 18px;
     line-height: 2px;
-
   }
 
   .personJob {
