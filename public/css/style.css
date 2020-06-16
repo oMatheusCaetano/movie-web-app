@@ -11149,4 +11149,38 @@ a.text-default-dark:hover, a.text-default-dark:focus {
 .bg-gradient {
   background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
+
+.preloader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  opacity: 0;
+}
 /*# sourceMappingURL=style.css.map */

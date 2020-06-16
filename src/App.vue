@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <ma-navbar />
-    <transition name="fade">
+    <transition name="fader">
       <router-view />
     </transition>
     <vue-progress-bar></vue-progress-bar>
@@ -27,13 +27,13 @@ export default {
   color: #2c3e50;
 }
 
-.fade-enter-active,
-.fade-leave-active {
+.fader-enter-active,
+.fader-leave-active {
   transition: .3s;
 }
 
-.fade-enter,
-.fade-leave-to {
+.fader-enter,
+.fader-leave-to {
   filter: blur(10px);
   opacity: 0;
 }
