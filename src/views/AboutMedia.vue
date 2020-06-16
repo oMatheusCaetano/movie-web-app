@@ -13,7 +13,6 @@ export default {
   },
 
   created() {
-    console.log(this.$route.params)
     this.$store.dispatch('showMedia', this.$route.params)
   },
 }
