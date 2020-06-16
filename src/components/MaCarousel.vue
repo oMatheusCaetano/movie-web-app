@@ -21,7 +21,7 @@
           <img
             class="img d-block mx-auto"
             :src="`https://image.tmdb.org/t/p/original/${image.backdrop_path}`"
-            alt="product-image"
+            alt="media-image"
           />
         </div>
       </div>

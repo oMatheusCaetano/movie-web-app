@@ -1,14 +1,23 @@
 <template>
-  <div>
+  <div v-if="this.$store.state.currentMedia.id">
+    <ma-media-banner />
   </div>
 </template>
 
 <script>
+import MaMediaBanner from '../components/MaMediaBanner.vue'
+
 export default {
+  components: {
+    MaMediaBanner,
+  },
+
   created() {
     this.$store.dispatch('showMedia', this.$route.params)
   },
 }
 </script>
 
-<style></style>
+<style>
+
+</style>
