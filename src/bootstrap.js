@@ -1,4 +1,5 @@
 import 'bootstrap'
+import './assets/css/style.scss'
 
 import 'animate.css'
 import 'vuejs-toggle-switch'

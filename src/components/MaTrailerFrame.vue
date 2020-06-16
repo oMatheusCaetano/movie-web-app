@@ -31,8 +31,11 @@
 export default {
   methods: {
     close() {
-      window.$('#trailerModal').remove()
-      window.$('.modal-backdrop').remove()
+      window.$('#trailerModal').modal('hide')
+      setTimeout(() => {
+        window.$('#trailerModal').remove()
+        window.$('.modal-backdrop').remove()
+      }, 400)
     },
   },
 
