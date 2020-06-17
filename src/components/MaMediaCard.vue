@@ -14,7 +14,7 @@
         <img
           class="mediaImage mb-3 rounded shadow"
           alt="picture"
-          :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
+          :src="`https://image.tmdb.org/t/p/w100/${this.media.poster_path}`"
         />
         <span class="text-default-dark">{{ titleOrName() }}</span>
       </router-link>

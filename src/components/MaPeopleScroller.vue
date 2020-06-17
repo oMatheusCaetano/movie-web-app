@@ -1,26 +1,26 @@
 <template>
   <smooth-scrollbar>
     <div class="d-flex">
-      <ma-media-card
+      <ma-person-card
         class="mx-1"
-        v-for="movie in media"
-        :key="movie.id"
-        :media="movie"
+        v-for="(person, index) in people"
+        :key="index"
+        :person="person"
       />
     </div>
   </smooth-scrollbar>
 </template>
 
 <script>
-import MaMediaCard from './MaMediaCard.vue'
+import MaPersonCard from './MaPersonCard.vue'
 
 export default {
   components: {
-    MaMediaCard,
+    MaPersonCard,
   },
 
   props: {
-    media: {
+    people: {
       type: Array,
       required: true,
     },
