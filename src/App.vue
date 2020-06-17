@@ -1,12 +1,14 @@
 <template>
-  <div id="app">
-    <ma-pre-loader />
-    <ma-navbar />
-    <transition name="fader">
-      <router-view />
-    </transition>
-    <vue-progress-bar></vue-progress-bar>
-  </div>
+  <smooth-scrollbar>
+    <div id="app">
+      <ma-pre-loader />
+      <ma-navbar />
+      <transition name="fader">
+        <router-view />
+      </transition>
+      <vue-progress-bar></vue-progress-bar>
+    </div>
+  </smooth-scrollbar>
 </template>
 
 <script>
@@ -32,7 +34,7 @@ export default {
 
 .fader-enter-active,
 .fader-leave-active {
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .fader-enter,
@@ -40,5 +42,4 @@ export default {
   filter: blur(10px);
   opacity: 0;
 }
-
 </style>

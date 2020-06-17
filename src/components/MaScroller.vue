@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="overflow-auto d-flex">
+  <smooth-scrollbar>
+    <div class="d-flex">
       <ma-media-card
         class="mx-1"
         v-for="movie in media"
@@ -8,7 +8,7 @@
         :media="movie"
       />
     </div>
-  </div>
+  </smooth-scrollbar>
 </template>
 
 <script>
@@ -27,3 +27,6 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+</style>

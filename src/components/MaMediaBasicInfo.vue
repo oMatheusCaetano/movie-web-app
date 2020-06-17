@@ -36,18 +36,11 @@
       <font-awesome-icon icon="play" />
       Watch Trailer
     </button>
-    <ma-trailer-frame />
   </div>
 </template>
 
 <script>
-import MaTrailerFrame from './MaTrailerFrame.vue'
-
 export default {
-  components: {
-    MaTrailerFrame,
-  },
-
   computed: {
     media() {
       return this.$store.state.currentMedia

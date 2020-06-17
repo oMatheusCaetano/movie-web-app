@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <ma-carousel />
 
     <div class="px-3 pt-4 bg-light">
@@ -53,7 +52,7 @@
       <ma-scroller :media="trendingTvShows" />
     </div>
 
-    <ma-footer class="mt-5"/>
+    <ma-footer class="mt-5" />
   </div>
 </template>
 
