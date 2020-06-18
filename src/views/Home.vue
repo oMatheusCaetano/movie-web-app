@@ -4,12 +4,12 @@
 
     <div class="px-3 pt-4 bg-light">
       <div class="d-flex flex-wrap py-3 bg-light">
-        <h2 class="col-12 col-md-4 col-lg-2 h3 text-default-dark">
+        <h2 class="h3 mx-auto ml-md-2 mr-md-0 text-lg-left text-default-dark">
           <font-awesome-icon class="text-danger" icon="heart" />
           What's Popular
         </h2>
         <ma-category-switcher
-          class="col-12 col-md-8 col-lg-10"
+          class="mx-auto ml-md-4 text-lg-left"
           width="20"
           preSelected="Movies"
           :data="[{ name: 'Movies' }, { name: 'On TV' }]"
@@ -18,16 +18,16 @@
       <ma-scroller :media="popularMedia" />
     </div>
 
-    <ma-video-scroller class="my-5 rounded mx-1" :media="upcomingMedia" />
+    <ma-video-scroller class="py-5 rounded mx-1" :media="upcomingMedia" />
 
     <div class="px-3 pt-4 bg-light">
       <div class="d-flex flex-wrap py-3 bg-light">
-        <h2 class="col-12 col-md-4 col-lg-2 h3 text-default-dark">
+        <h2 class="h3 mx-auto ml-md-2 mr-md-0 text-lg-left text-default-dark">
           <font-awesome-icon class="text-info" icon="fire" />
           Trending Movies
         </h2>
         <ma-category-switcher
-          class="col-12 col-md-8 col-lg-19"
+          class="mx-auto ml-md-4 text-lg-left"
           width="20"
           preSelected="Movies Today"
           :data="[{ name: 'Movies Today' }, { name: 'Movies This Week' }]"
@@ -38,12 +38,12 @@
 
     <div class="px-3 pt-4 bg-light">
       <div class="d-flex flex-wrap py-3 bg-light">
-        <h2 class="col-12 col-md-4 col-lg-2 h3 text-default-dark">
+        <h2 class="h3 mx-auto ml-md-2 mr-md-0 text-lg-left text-default-dark">
           <font-awesome-icon class="text-info" icon="fire" />
           Trending TV
         </h2>
         <ma-category-switcher
-          class="col-12 col-md-8 col-lg-10"
+          class="mx-auto ml-md-4 text-lg-left"
           width="20"
           preSelected="TV Today"
           :data="[{ name: 'TV Today' }, { name: 'TV This Week' }]"

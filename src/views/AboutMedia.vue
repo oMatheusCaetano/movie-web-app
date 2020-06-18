@@ -17,7 +17,7 @@
       <ma-media-other-info class="col-12 col-lg-2 mx-auto" />
     </div>
     <div class="py-5 ml-3 bg-light">
-      <span class="h3">
+      <span class="h3 ml-3">
         <font-awesome-icon class="text-danger" icon="fire" />
         Reviews
       </span>

@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex">
+    <div class="d-flex overflow-auto">
       <ma-media-card
         class="mx-1"
         v-for="movie in media"
