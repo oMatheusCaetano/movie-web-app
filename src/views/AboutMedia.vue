@@ -14,7 +14,7 @@
         </h2>
         <ma-people-scroller :people="currentMedia.credits.crew" />
       </div>
-      <div class="sideBox bg-gradient col-12 col-lg-2">content</div>
+      <ma-media-other-info class="col-10 col-lg-2 mx-auto" />
     </div>
     <div class="py-5 ml-3 bg-light">
       <span class="h3">
@@ -35,6 +35,7 @@
 import MaMediaBanner from '../components/MaMediaBanner.vue'
 import MaTrailerFrame from '../components/MaTrailerFrame.vue'
 import MaPeopleScroller from '../components/MaPeopleScroller.vue'
+import MaMediaOtherInfo from '../components/MaMediaOtherInfo.vue'
 import MaReviewsScroller from '../components/MaReviewsScroller.vue'
 import MaFooter from '../components/MaFooter.vue'
 
@@ -43,6 +44,7 @@ export default {
     MaMediaBanner,
     MaTrailerFrame,
     MaPeopleScroller,
+    MaMediaOtherInfo,
     MaReviewsScroller,
     MaFooter,
   },
