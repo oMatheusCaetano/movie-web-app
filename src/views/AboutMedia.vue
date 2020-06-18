@@ -16,7 +16,16 @@
       </div>
       <div class="sideBox bg-gradient col-12 col-lg-2">content</div>
     </div>
-    <ma-reviews-scroller />
+    <div class="py-5 ml-3 bg-light">
+      <span class="h3">
+        <font-awesome-icon class="text-danger" icon="fire" />
+        Reviews
+      </span>
+      <span class="badge badge-pill badge-light">
+        {{ currentMedia.reviews.total_results }}
+      </span>
+      <ma-reviews-scroller />
+    </div>
     <ma-footer />
     <ma-trailer-frame class="iframe" />
   </div>
