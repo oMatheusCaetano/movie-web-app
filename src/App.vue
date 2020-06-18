@@ -1,13 +1,12 @@
 <template>
-
-    <div id="app">
-      <ma-pre-loader />
-      <ma-navbar />
-      <transition name="fader">
-        <router-view />
-      </transition>
-      <vue-progress-bar></vue-progress-bar>
-    </div>
+  <div id="app">
+    <ma-pre-loader />
+    <ma-navbar />
+    <transition name="fader">
+      <router-view />
+    </transition>
+    <vue-progress-bar></vue-progress-bar>
+  </div>
 </template>
 
 <script>

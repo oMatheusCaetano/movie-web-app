@@ -10,6 +10,7 @@
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
         <iframe
+          id="teste"
           class="h-100"
           allowfullscreen
           frameborder="0"
@@ -32,10 +33,8 @@ export default {
   methods: {
     close() {
       window.$('#trailerModal').modal('hide')
-      setTimeout(() => {
-        window.$('#trailerModal').remove()
-        window.$('.modal-backdrop').remove()
-      }, 400)
+      const src = window.$('iframe').attr('src')
+      window.$('iframe').attr('src', src)
     },
   },
 

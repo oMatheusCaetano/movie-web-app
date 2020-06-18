@@ -7,17 +7,21 @@
         {{ media.vote_average | formatRate }}
       </div>
     </div>
-      <router-link
-        class=" text-decoration-none font-weight-bold text-dark"
-        :to="{ name: 'AboutMedia', params: { media_type: movieOrTvShow(), media_id: media.id } }"
-      >
-        <img
-          class="mediaImage mb-3 rounded shadow"
-          alt="picture"
-          :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
-        />
-        <span class="text-default-dark">{{ titleOrName() }}</span>
-      </router-link>
+    <router-link
+      class=" text-decoration-none font-weight-bold text-dark"
+      :to="{
+        name: 'AboutMedia',
+        params: { media_type: movieOrTvShow(), media_id: media.id },
+      }"
+    >
+      <img
+        class="mediaImage mb-3 rounded shadow"
+        @click="updatePage()"
+        alt="picture"
+        :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
+      />
+      <span class="text-default-dark">{{ titleOrName() }}</span>
+    </router-link>
     <p class="text-secondary">{{ date() | formatDate }}</p>
   </div>
 </template>
@@ -32,6 +36,13 @@ export default {
   },
 
   methods: {
+    updatePage() {
+      this.$store.dispatch('showMedia', {
+        media_type: this.movieOrTvShow(),
+        media_id: this.media.id,
+      })
+    },
+
     movieOrTvShow() {
       return this.media.title ? 'movies' : 'tv'
     },
@@ -63,5 +74,4 @@ export default {
     filter: brightness(50%);
   }
 }
-
 </style>

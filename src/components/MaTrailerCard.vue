@@ -27,18 +27,11 @@
     <div class="text-center text-white">
       <span class="text-secondary">{{ media.release_Date | formatDate }}</span>
     </div>
-    <ma-trailer-frame />
   </div>
 </template>
 
 <script>
-import MaTrailerFrame from './MaTrailerFrame.vue'
-
 export default {
-  components: {
-    MaTrailerFrame,
-  },
-
   props: {
     media: {
       type: Object,
@@ -59,6 +52,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.iframe {
+  z-index: 111111;
+}
+
 .imageBackground {
   cursor: pointer;
 

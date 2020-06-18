@@ -53,6 +53,7 @@
     </div>
 
     <ma-footer class="mt-5" />
+    <ma-trailer-frame />
   </div>
 </template>
 
@@ -62,10 +63,12 @@ import MaCategorySwitcher from '../components/MaCategorySwitcher.vue'
 import MaScroller from '../components/MaScroller.vue'
 import MaVideoScroller from '../components/MaVideoScroller.vue'
 import MaFooter from '../components/MaFooter.vue'
+import MaTrailerFrame from '../components/MaTrailerFrame.vue'
 
 export default {
   components: {
     MaCarousel,
+    MaTrailerFrame,
     MaCategorySwitcher,
     MaScroller,
     MaVideoScroller,

@@ -1,13 +1,9 @@
 <template>
   <div class="pt-3 bg-gradient">
     <h2 class="h3 text-white ml-5">Today</h2>
-      <div class="scroller_items overflow-auto d-flex align-items-center">
-        <ma-trailer-card
-          v-for="movie in media"
-          :key="movie.id"
-          :media="movie"
-        />
-      </div>
+    <div class="scroller_items overflow-auto d-flex align-items-center">
+      <ma-trailer-card v-for="movie in media" :key="movie.id" :media="movie" />
+    </div>
   </div>
 </template>
 

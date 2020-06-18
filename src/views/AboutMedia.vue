@@ -26,27 +26,37 @@
       </span>
       <ma-reviews-scroller v-if="currentMedia.reviews.total_results > 0" />
     </div>
+
+    <div class="px-3 pt-4">
+      <h2 class="h3 text-default-dark py-2">
+        <font-awesome-icon class="text-secondary" icon="clone" />
+        Similar
+      </h2>
+      <ma-scroller :media="currentMedia.similar.results" />
+    </div>
     <ma-footer />
-    <ma-trailer-frame class="iframe" />
+    <ma-trailer-frame />
   </div>
 </template>
 
 <script>
 import MaMediaBanner from '../components/MaMediaBanner.vue'
-import MaTrailerFrame from '../components/MaTrailerFrame.vue'
 import MaPeopleScroller from '../components/MaPeopleScroller.vue'
 import MaMediaOtherInfo from '../components/MaMediaOtherInfo.vue'
 import MaReviewsScroller from '../components/MaReviewsScroller.vue'
+import MaScroller from '../components/MaScroller.vue'
 import MaFooter from '../components/MaFooter.vue'
+import MaTrailerFrame from '../components/MaTrailerFrame.vue'
 
 export default {
   components: {
     MaMediaBanner,
-    MaTrailerFrame,
     MaPeopleScroller,
     MaMediaOtherInfo,
     MaReviewsScroller,
+    MaScroller,
     MaFooter,
+    MaTrailerFrame,
   },
 
   computed: {
