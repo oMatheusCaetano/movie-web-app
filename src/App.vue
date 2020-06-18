@@ -1,5 +1,5 @@
 <template>
-  <smooth-scrollbar>
+
     <div id="app">
       <ma-pre-loader />
       <ma-navbar />
@@ -8,7 +8,6 @@
       </transition>
       <vue-progress-bar></vue-progress-bar>
     </div>
-  </smooth-scrollbar>
 </template>
 
 <script>

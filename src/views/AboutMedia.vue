@@ -1,30 +1,41 @@
 <template>
-  <div class="pb-5" v-if="currentMedia.id">
+  <div v-if="currentMedia.id">
     <ma-media-banner />
-    <div class="d-flex">
-      <div>
-        <ma-people-scroller class="col-12" :people="currentMedia.credits.cast" />
-        <!-- <ma-people-scroller class="col-12" :people="currentMedia.credits.crew" /> -->
+    <div class="d-flex flex-wrap">
+      <div class="col-12 col-lg-10">
+        <h2 class="mb-3 mt-4 ml-2">
+          <font-awesome-icon class="text-warning" icon="star" />
+          Cast
+        </h2>
+        <ma-people-scroller :people="currentMedia.credits.cast" />
+        <h2 class="mb-3 mt-4 ml-2">
+          <font-awesome-icon class="text-info" icon="briefcase" />
+          Cast
+        </h2>
+        <ma-people-scroller :people="currentMedia.credits.crew" />
       </div>
-      <div class="sideBox bg-gradient w-25">content</div>
+      <div class="sideBox bg-gradient col-12 col-lg-2">content</div>
     </div>
-    <!-- <ma-review-scroller class="reviews mx-auto" /> -->
-    <!-- <ma-trailer-frame class="iframe" /> -->
+    <ma-reviews-scroller />
+    <ma-footer />
+    <ma-trailer-frame class="iframe" />
   </div>
 </template>
 
 <script>
 import MaMediaBanner from '../components/MaMediaBanner.vue'
-// import MaTrailerFrame from '../components/MaTrailerFrame.vue'
+import MaTrailerFrame from '../components/MaTrailerFrame.vue'
 import MaPeopleScroller from '../components/MaPeopleScroller.vue'
-// import MaReviewScroller from '../components/MaReviewsScroller.vue'
+import MaReviewsScroller from '../components/MaReviewsScroller.vue'
+import MaFooter from '../components/MaFooter.vue'
 
 export default {
   components: {
     MaMediaBanner,
-    // MaTrailerFrame,
+    MaTrailerFrame,
     MaPeopleScroller,
-    // MaReviewScroller,
+    MaReviewsScroller,
+    MaFooter,
   },
 
   computed: {
@@ -38,14 +49,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.sideBox {
-  width: 200px;
-}
-
-.reviews {
-  height: 300px;
-  width: 95vw;
-}
-</style>

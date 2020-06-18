@@ -1,5 +1,4 @@
 <template>
-  <smooth-scrollbar>
     <div class="d-flex">
       <ma-media-card
         class="mx-1"
@@ -8,7 +7,6 @@
         :media="movie"
       />
     </div>
-  </smooth-scrollbar>
 </template>
 
 <script>

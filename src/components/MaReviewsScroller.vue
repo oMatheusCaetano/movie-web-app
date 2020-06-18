@@ -1,12 +1,10 @@
 <template>
-  <div class="scroller">
-    <smooth-scrollbar>
-      <ma-review-card
-        v-for="review in reviews.results"
-        :key="review.id"
-        :review="review"
-      />
-    </smooth-scrollbar>
+  <div class="scroller overflow-auto">
+    <ma-review-card
+      v-for="review in reviews.results"
+      :key="review.id"
+      :review="review"
+    />
   </div>
 </template>
 
@@ -25,3 +23,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.scroller {
+  height: 300px;
+}
+</style>

@@ -1,7 +1,6 @@
 <template>
   <div class="pt-3 bg-gradient">
     <h2 class="h3 text-white ml-5">Today</h2>
-    <smooth-scrollbar>
       <div class="scroller_items d-flex align-items-center">
         <ma-trailer-card
           v-for="movie in media"
@@ -9,7 +8,6 @@
           :media="movie"
         />
       </div>
-    </smooth-scrollbar>
   </div>
 </template>
 
