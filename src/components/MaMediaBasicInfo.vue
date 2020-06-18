@@ -9,8 +9,8 @@
         {{
           index === media.genres.length - 1 ? genre.name : `${genre.name},`
         }}
-      </span>|
-      <span class="mr-1">{{ `${media.runtime}min` }}</span>|
+      </span>
+      <span class="mr-1">{{ media.runtime ? `| ${media.runtime}min |` : '|' }}</span>
       <span>{{ media.vote_average }}</span>
     </p>
     <h4 class="mx-2 text-center text-lg-left">Overview</h4>

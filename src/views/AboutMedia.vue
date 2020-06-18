@@ -14,7 +14,7 @@
         </h2>
         <ma-people-scroller :people="currentMedia.credits.crew" />
       </div>
-      <ma-media-other-info class="col-10 col-lg-2 mx-auto" />
+      <ma-media-other-info class="col-12 col-lg-2 mx-auto" />
     </div>
     <div class="py-5 ml-3 bg-light">
       <span class="h3">
@@ -24,7 +24,7 @@
       <span class="badge badge-pill badge-light">
         {{ currentMedia.reviews.total_results }}
       </span>
-      <ma-reviews-scroller />
+      <ma-reviews-scroller v-if="currentMedia.reviews.total_results > 0" />
     </div>
     <ma-footer />
     <ma-trailer-frame class="iframe" />
