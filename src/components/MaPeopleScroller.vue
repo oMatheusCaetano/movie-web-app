@@ -1,14 +1,16 @@
 <template>
-  <smooth-scrollbar>
-    <div class="d-flex">
-      <ma-person-card
-        class="mx-1"
-        v-for="(person, index) in people"
-        :key="index"
-        :person="person"
-      />
-    </div>
-  </smooth-scrollbar>
+  <div class="tt">
+    <smooth-scrollbar>
+      <div class="overflow-auto d-flex">
+        <ma-person-card
+          class="mx-1"
+          v-for="(person, index) in people"
+          :key="index"
+          :person="person"
+        />
+      </div>
+    </smooth-scrollbar>
+  </div>
 </template>
 
 <script>
@@ -27,3 +29,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.tt {
+  height: 500px;
+}
+</style>

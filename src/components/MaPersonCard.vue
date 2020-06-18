@@ -9,9 +9,11 @@
         alt="picture"
         :src="`https://image.tmdb.org/t/p/w200/${this.person.profile_path}`"
       />
-      <span class="text-default-dark">{{ this.person.name }}</span>
+      <div>
+        <span class="personName text-default-dark">{{ this.person.name }}</span>
+      </div>
     </router-link>
-    <p>{{ characterOrJob() }}</p>
+    <p class="personJob">{{ characterOrJob() }}</p>
   </div>
 </template>
 
@@ -41,5 +43,18 @@ export default {
 <style lang="scss" scoped>
 .personImage {
   height: 250px;
+  transition: 0.3s;
+
+  &:hover {
+    filter: brightness(50%);
+  }
+}
+
+.personName {
+  line-height: .5;
+}
+
+.personJob {
+  line-height: 1.1;
 }
 </style>

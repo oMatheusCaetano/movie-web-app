@@ -30,9 +30,9 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .scroller_items {
-    height: 350px;
-    width: 100%;
+  height: 350px;
+  width: 100%;
 }
 </style>
