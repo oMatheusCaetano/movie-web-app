@@ -37,10 +37,13 @@ export default {
 
   methods: {
     updatePage() {
-      this.$store.dispatch('showMedia', {
-        media_type: this.movieOrTvShow(),
-        media_id: this.media.id,
-      })
+      if (this.$route.name === 'AboutMedia') {
+        this.$store.dispatch('showMedia', {
+          media_type: this.movieOrTvShow(),
+          media_id: this.media.id,
+        })
+      }
+      this.$store.commit('clearCurrentMedia')
     },
 
     movieOrTvShow() {
