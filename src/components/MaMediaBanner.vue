@@ -10,7 +10,7 @@
           alt="media-poster-image"
         />
       </div>
-      <ma-media-basic-info class="col-12 col-lg-8 col-xl-7" />
+      <ma-media-basic-info class="col-12 col-lg-8 col-xl-7 mt-4 mt-lg-0" />
     </div>
   </div>
 </template>
