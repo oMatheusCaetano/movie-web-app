@@ -4,11 +4,7 @@
       class="banner_content position-relative d-flex align-items-center row py-4"
     >
       <div class="col-12 col-lg-3 col-xl-4 text-center">
-        <img
-          class="banner_posterImage"
-          :src="`https://image.tmdb.org/t/p/w500/${media.poster_path}`"
-          alt="media-poster-image"
-        />
+        <ma-image class="banner_posterImage" :image="{ file_path: media.poster_path }" :size="300"/>
       </div>
       <ma-media-basic-info class="col-12 col-lg-8 col-xl-7 mt-4 mt-lg-0" />
     </div>
@@ -17,10 +13,12 @@
 
 <script>
 import MaMediaBasicInfo from './MaMediaBasicInfo.vue'
+import MaImage from './MaImage.vue'
 
 export default {
   components: {
     MaMediaBasicInfo,
+    MaImage,
   },
 
   computed: {
@@ -56,10 +54,6 @@ export default {
 
   &_content {
     z-index: 111;
-  }
-
-  &_posterImage {
-    height: 500px;
   }
 }
 </style>
