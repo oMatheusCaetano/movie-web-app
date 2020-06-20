@@ -9,6 +9,7 @@ export default new Vuex.Store({
   modules: {},
   state: {
     currentMedia: [],
+    popularPeople: [],
     popularMedia: [],
     upcomingMedia: [],
     trendingMovies: [],

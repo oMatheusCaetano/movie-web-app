@@ -26,4 +26,8 @@ export default {
   setTrendingTv(state, trendingTv) {
     state.trendingTv = trendingTv
   },
+
+  setPopularPeople(state, popularPeople) {
+    state.popularPeople = popularPeople
+  },
 }

@@ -1,4 +1,5 @@
 import Home from '../views/Home.vue'
+import People from '../views/People.vue'
 
 export default [
   {
@@ -10,7 +11,7 @@ export default [
   {
     path: '/people',
     name: 'People',
-    component: () => import(/* webpackChunkName: "about" */ '../views/People.vue'),
+    component: People,
   },
 
   {

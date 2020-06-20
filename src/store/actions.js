@@ -30,4 +30,9 @@ export default {
     const { data } = await Api.get(`tv/trending/${timeWindow}`)
     context.commit('setTrendingTv', data)
   },
+
+  async popularPeople(context) {
+    const { data } = await Api.get('person/popular')
+    context.commit('setPopularPeople', data)
+  },
 }
