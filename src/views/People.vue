@@ -12,10 +12,18 @@
         :person="person"
       />
     </div>
-    <div class="d-flex justify-content-around py-5">
-      <a href="#" @click="previousPage()">Previous</a>
-      <a href="#" @click="nextPage()">Next</a>
-    </div>
+
+    <nav>
+      <ul class="pagination justify-content-around">
+        <li class="page-item" :class="{ disabled: nextPageIndex <= 2 }" >
+          <a class="page-link" href="#" @click="previousPage()">Previous</a>
+        </li>
+        <li class="page-item" :class="{ disabled: nextPageIndex > 500 }">
+          <a class="page-link" href="#" @click="nextPage()">Next</a>
+        </li>
+      </ul>
+    </nav>
+
   </div>
 </template>
 
