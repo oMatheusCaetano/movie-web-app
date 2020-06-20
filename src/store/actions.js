@@ -31,8 +31,9 @@ export default {
     context.commit('setTrendingTv', data)
   },
 
-  async popularPeople(context) {
-    const { data } = await Api.get('person/popular')
+  async popularPeople(context, pageNumber) {
+    const page = pageNumber > 0 ? pageNumber : 1
+    const { data } = await Api.get(`person/popular?page=${page}`)
     context.commit('setPopularPeople', data)
   },
 }

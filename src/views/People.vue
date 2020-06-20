@@ -12,6 +12,10 @@
         :person="person"
       />
     </div>
+    <div class="d-flex justify-content-around py-5">
+      <a href="#" @click="previousPage()">Previous</a>
+      <a href="#" @click="nextPage()">Next</a>
+    </div>
   </div>
 </template>
 
@@ -23,9 +27,23 @@ export default {
     MaPersonCard,
   },
 
+  data: () => ({
+    nextPageIndex: 2,
+  }),
+
   computed: {
     popularPeople() {
       return this.$store.state.popularPeople
+    },
+  },
+
+  methods: {
+    previousPage() {
+      this.$store.dispatch('popularPeople', --this.nextPageIndex - 1)
+    },
+
+    nextPage() {
+      this.$store.dispatch('popularPeople', this.nextPageIndex++)
     },
   },
 
