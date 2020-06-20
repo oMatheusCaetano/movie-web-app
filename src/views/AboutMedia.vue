@@ -32,21 +32,38 @@
     </div>
 
     <div class="py-4 bg-gradient">
-      <div class="d-flex flex-wrap mb-4 ml-3">
-        <ma-title title="Content" icon="star" iconColor="warning" />
+      <div class="d-flex flex-wrap mb-4">
+        <ma-title
+          class="mx-auto mx-md-3"
+          title="Content"
+          icon="star"
+          iconColor="warning"
+        />
 
-        <div>
-          <a class="btn" @click="currentContent = 'videos'">
+        <div class="mx-auto mx-md-0">
+          <a
+            class="btn contentOption"
+            :class="{ currentContent: currentContent === 'videos' }"
+            @click="currentContent = 'videos'"
+          >
             Videos
-            <span class="badge badge-light">9</span>
+            <span class="badge badge-light">{{ quantityOfVideos() }}</span>
           </a>
-          <a class="btn" @click="currentContent = 'backdrops'">
+          <a
+            class="btn contentOption"
+            :class="{ currentContent: currentContent === 'backdrops' }"
+            @click="currentContent = 'backdrops'"
+          >
             Backdrops
-            <span class="badge badge-light">9</span>
+            <span class="badge badge-light">{{ quantityOfBackdrops() }}</span>
           </a>
-          <a class="btn" @click="currentContent = 'posters'">
+          <a
+            class="btn contentOption"
+            :class="{ currentContent: currentContent === 'posters' }"
+            @click="currentContent = 'posters'"
+          >
             Posters
-            <span class="badge badge-light">9</span>
+            <span class="badge badge-light">{{ quantityOfPosters() }}</span>
           </a>
         </div>
       </div>
@@ -117,15 +134,39 @@ export default {
     },
   },
 
+  methods: {
+    quantityOfVideos() {
+      return this.$store.state.currentMedia.videos.results.length
+    },
+
+    quantityOfBackdrops() {
+      return this.$store.state.currentMedia.images.backdrops.length
+    },
+
+    quantityOfPosters() {
+      return this.$store.state.currentMedia.images.posters.length
+    },
+  },
+
   created() {
     this.$store.dispatch('showMedia', this.$route.params)
   },
 }
 </script>
 
-<style scoped>
-.currentContent {
-  background-color: red !important;
-  color: white !important;
+<style lang="scss" scoped>
+.contentOption {
+  &:hover {
+    box-shadow: 3px 3px 3px #008080;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  &.currentContent {
+    border: #d3d3d3 1px solid;
+    box-shadow: 3px 3px 3px #008080;
+    color: #fff;
+    transition: 0.3s;
+  }
 }
 </style>
