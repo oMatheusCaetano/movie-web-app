@@ -8,6 +8,7 @@
           class="mx-auto ml-md-2 mr-md-0 text-lg-left"
           title="What's Popular"
           icon="heart"
+          iconColor="danger"
         />
         <ma-category-switcher
           class="mx-auto ml-md-4 text-lg-left"
@@ -26,7 +27,8 @@
         <ma-title
           class="mx-auto ml-md-2 mr-md-0 text-lg-left"
           title="Trending Movies"
-          icon="heart"
+          icon="star"
+          iconColor="warning"
         />
         <ma-category-switcher
           class="mx-auto ml-md-4 text-lg-left"
@@ -43,7 +45,8 @@
         <ma-title
           class="mx-auto ml-md-2 mr-md-0 text-lg-left"
           title="Trending On TV"
-          icon="heart"
+          icon="star"
+          iconColor="warning"
         />
         <ma-category-switcher
           class="mx-auto ml-md-4 text-lg-left"

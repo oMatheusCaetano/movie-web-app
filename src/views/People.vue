@@ -1,6 +1,11 @@
 <template>
   <div class="container">
-    <ma-title class="pl-3 pt-4 pb-3 text-center text-md-left" title="Who's Popular" icon="heart" />
+    <ma-title
+      class="pl-3 pt-4 pb-3 text-center text-md-left"
+      title="Who's Popular"
+      icon="heart"
+      iconColor="danger"
+    />
     <div class="d-flex flex-wrap">
       <ma-person-card
         class="col-6 col-md-3 col-lg-2 text-center"
