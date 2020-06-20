@@ -19,6 +19,10 @@ export default {
     state.video = video
   },
 
+  setImage(state, image) {
+    state.image = image
+  },
+
   setTrendingMovies(state, trendingMovies) {
     state.trendingMovies = trendingMovies
   },

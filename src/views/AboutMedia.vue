@@ -97,6 +97,7 @@
     </div>
     <ma-footer />
     <ma-trailer-frame />
+    <ma-image-modal />
   </div>
 </template>
 
@@ -110,6 +111,7 @@ import MaReviewsScroller from '../components/MaReviewsScroller.vue'
 import MaScroller from '../components/MaScroller.vue'
 import MaFooter from '../components/MaFooter.vue'
 import MaTrailerFrame from '../components/MaTrailerFrame.vue'
+import MaImageModal from '../components/MaImageModal.vue'
 
 export default {
   components: {
@@ -122,6 +124,7 @@ export default {
     MaScroller,
     MaFooter,
     MaTrailerFrame,
+    MaImageModal,
   },
 
   data: () => ({

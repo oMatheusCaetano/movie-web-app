@@ -3,7 +3,10 @@
     <img
       class="image mb-3 rounded shadow mx-1"
       alt="content-image"
+      data-toggle="modal"
+      data-target="#imageModal"
       :src="`https://image.tmdb.org/t/p/w${size}/${this.image.file_path}`"
+      @click="showImage()"
     />
   </div>
 </template>
@@ -19,6 +22,12 @@ export default {
     size: {
       type: Number,
       required: true,
+    },
+  },
+
+  methods: {
+    showImage() {
+      this.$store.commit('setImage', this.image)
     },
   },
 }
