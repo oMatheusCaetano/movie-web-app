@@ -12,46 +12,23 @@
         :person="person"
       />
     </div>
-
-    <nav>
-      <ul class="pagination justify-content-around">
-        <li class="page-item" :class="{ disabled: nextPageIndex <= 2 }" >
-          <a class="page-link" href="#" @click="previousPage()">Previous</a>
-        </li>
-        <li class="page-item" :class="{ disabled: nextPageIndex > 500 }">
-          <a class="page-link" href="#" @click="nextPage()">Next</a>
-        </li>
-      </ul>
-    </nav>
-
+    <ma-pagination />
   </div>
 </template>
 
 <script>
 import MaPersonCard from '../components/MaPersonCard.vue'
+import MaPagination from '../components/MaPagination.vue'
 
 export default {
   components: {
     MaPersonCard,
+    MaPagination,
   },
-
-  data: () => ({
-    nextPageIndex: 2,
-  }),
 
   computed: {
     popularPeople() {
       return this.$store.state.popularPeople
-    },
-  },
-
-  methods: {
-    previousPage() {
-      this.$store.dispatch('popularPeople', --this.nextPageIndex - 1)
-    },
-
-    nextPage() {
-      this.$store.dispatch('popularPeople', this.nextPageIndex++)
     },
   },
 
@@ -60,5 +37,3 @@ export default {
   },
 }
 </script>
-
-<style></style>
