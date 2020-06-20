@@ -49,7 +49,7 @@ export default {
 
   methods: {
     defineVideo() {
-      this.$store.commit('setVideos', this.media.videos.results)
+      this.$store.commit('setVideo', this.media.videos.results[0])
     },
 
     titleOrName() {

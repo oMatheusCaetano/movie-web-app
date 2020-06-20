@@ -40,7 +40,7 @@ export default {
 
   computed: {
     video() {
-      return this.$store.state.videos[0]
+      return this.$store.state.video
     },
   },
 }

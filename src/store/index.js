@@ -14,7 +14,7 @@ export default new Vuex.Store({
     upcomingMedia: [],
     trendingMovies: [],
     trendingTv: [],
-    videos: [],
+    video: {},
   },
   mutations,
   actions,

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient shadow p-4">
+  <div class="bg-gradient p-4">
     <span class="font-weight-bold">Status</span>
     <p>{{ currentMedia.status }}</p>
     <span class="font-weight-bold">Budget</span>

@@ -15,6 +15,7 @@
           :person="person"
         />
       </div>
+
       <ma-title
         class="mb-3 mt-4 ml-2"
         title="Crew"
@@ -30,6 +31,7 @@
         />
       </div>
     </div>
+
     <ma-footer />
   </div>
 </template>

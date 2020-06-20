@@ -1,5 +1,5 @@
 <template>
-  <div v-if="media.backdrop_path !== null">
+  <div>
     <div
       class="imageBackground position-relative"
       data-toggle="modal"
@@ -15,17 +15,22 @@
         <font-awesome-icon icon="play" />
       </span>
       <img
-        class="imageBackground_image rounded mx-2 shadow"
-        :src="`https://image.tmdb.org/t/p/w400/${this.media.backdrop_path}`"
+        class="rounded mx-2 shadow"
         alt="movie-image"
+        v-if="!fromVideo"
+        :src="`https://image.tmdb.org/t/p/w400/${this.media.backdrop_path}`"
+        :class="{ zoom: zoom }"
+      />
+      <img
+        class="imageBackground_image rounded mx-2 shadow"
+        alt="movie-image"
+        v-else
+        :src="`https://img.youtube.com/vi/${this.media.key}/sddefault.jpg`"
         :class="{ zoom: zoom }"
       />
     </div>
     <div class="text-center text-white font-weight-bold mt-3">
       <span>{{ media.title }}</span>
-    </div>
-    <div class="text-center text-white">
-      <span class="text-secondary">{{ media.release_Date | formatDate }}</span>
     </div>
   </div>
 </template>
@@ -37,6 +42,11 @@ export default {
       type: Object,
       required: true,
     },
+
+    fromVideo: {
+      type: Boolean,
+      required: false,
+    },
   },
 
   data: () => ({
@@ -45,7 +55,7 @@ export default {
 
   methods: {
     getVideo() {
-      this.$store.dispatch('videos', this.media.id)
+      this.$store.dispatch('video', this.media.id)
     },
   },
 }
@@ -70,6 +80,10 @@ export default {
       top: 40%;
       font-size: 50px;
     }
+  }
+
+  &_image {
+    width: 400px;
   }
 }
 </style>
