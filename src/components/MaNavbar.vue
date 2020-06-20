@@ -16,13 +16,23 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <li class="nav-item">
           <router-link class="nav-link" :to="{ name: 'Home' }">
             Home
-            <span class="sr-only">(current)</span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" :to="{ name: 'People' }">
+            People
           </router-link>
         </li>
       </ul>
     </div>
   </nav>
 </template>
+
+<style scoped>
+.router-link-exact-active {
+  color: #fff !important;
+}
+</style>
