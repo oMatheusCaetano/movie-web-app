@@ -15,6 +15,12 @@ export default [
   },
 
   {
+    path: '/people/:person_id',
+    name: 'AboutPerson',
+    component: () => import(/* webpackChunkName: "about" */ '../views/AboutPerson.vue'),
+  },
+
+  {
     path: '/about-media/:media_type/:media_id',
     name: 'AboutMedia',
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutMedia.vue'),

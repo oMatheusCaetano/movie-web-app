@@ -2,7 +2,7 @@
   <div v-if="this.person.profile_path && uncredited()">
     <router-link
       class=" text-decoration-none font-weight-bold text-dark"
-      to="#"
+      :to="{ name: 'AboutPerson', params: { person_id: this.person.id }}"
     >
       <img
         class="personImage mb-2 rounded shadow"
