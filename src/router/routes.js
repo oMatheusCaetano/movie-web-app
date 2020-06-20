@@ -19,4 +19,10 @@ export default [
     name: 'AboutMedia',
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutMedia.vue'),
   },
+
+  {
+    path: '/about-media/people',
+    name: 'PeopleFromMedia',
+    component: () => import(/* webpackChunkName: "about" */ '../views/PeopleFromMedia.vue'),
+  },
 ]

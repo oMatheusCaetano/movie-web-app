@@ -3,6 +3,7 @@
     <ma-person-card
       class="mx-1"
       v-for="(person, index) in people"
+      :noUncredited="true"
       :key="index"
       :person="person"
     />

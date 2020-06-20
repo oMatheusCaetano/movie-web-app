@@ -1,6 +1,7 @@
 <template>
   <div v-if="currentMedia.id">
     <ma-media-banner />
+
     <div class="d-flex flex-wrap">
       <div class="col-12 col-lg-10">
         <ma-title
@@ -10,6 +11,7 @@
           iconColor="warning"
         />
         <ma-people-scroller :people="currentMedia.credits.cast" />
+
         <ma-title
           class="mb-3 mt-4 ml-2"
           title="Crew"
@@ -17,9 +19,17 @@
           iconColor="info"
         />
         <ma-people-scroller :people="currentMedia.credits.crew" />
+
+        <router-link
+          class="btn btn-info bg-gradient my-2 float-right"
+          :to="{ name: 'PeopleFromMedia' }">
+          See All Cast & Crew
+        </router-link>
       </div>
+
       <ma-media-other-info class="col-12 col-lg-2 mx-auto" />
     </div>
+
     <div class="py-5 ml-3 bg-light">
       <div class="d-flex">
         <ma-title

@@ -10,7 +10,10 @@
         :src="`https://image.tmdb.org/t/p/w200/${this.person.profile_path}`"
       />
       <div>
-        <span class="personName text-default-dark">{{ this.person.name }}</span>
+        <span
+          class="personName text-default-dark"
+          >{{ this.person.name }}</span
+        >
       </div>
     </router-link>
     <p class="personJob">{{ characterOrJob() }}</p>
@@ -24,11 +27,16 @@ export default {
       type: Object,
       required: true,
     },
+
+    noUncredited: {
+      type: Boolean,
+      required: false,
+    },
   },
 
   methods: {
     uncredited() {
-      return this.person.character
+      return this.person.character && this.noUncredited
         ? this.person.character.indexOf('(uncredited)') === -1
         : true
     },
@@ -51,7 +59,7 @@ export default {
 }
 
 .personName {
-  line-height: .5;
+  line-height: 0.5;
 }
 
 .personJob {
