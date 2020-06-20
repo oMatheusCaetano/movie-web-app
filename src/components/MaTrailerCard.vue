@@ -30,7 +30,7 @@
       />
     </div>
     <div class="text-center text-white font-weight-bold mt-3">
-      <span>{{ media.title }}</span>
+      <span>{{ media.title ? media.title : media.name }}</span>
     </div>
   </div>
 </template>
@@ -55,7 +55,9 @@ export default {
 
   methods: {
     getVideo() {
-      this.$store.dispatch('video', this.media.id)
+      return this.fromVideo
+        ? this.$store.commit('setVideo', this.media)
+        : this.$store.dispatch('video', this.media.id)
     },
   },
 }

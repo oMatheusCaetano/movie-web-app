@@ -1,5 +1,5 @@
 <template>
-  <div v-if="currentMedia.id" >
+  <div v-if="currentMedia.id">
     <ma-media-banner />
 
     <div class="d-flex flex-wrap">
@@ -22,7 +22,8 @@
 
         <router-link
           class="btn btn-info bg-gradient my-3 float-right"
-          :to="{ name: 'PeopleFromMedia' }">
+          :to="{ name: 'PeopleFromMedia' }"
+        >
           See All Cast & Crew
         </router-link>
       </div>
@@ -31,13 +32,26 @@
     </div>
 
     <div class="py-4 bg-gradient">
-      <ma-title
-        class="mb-4 ml-3"
-        title="Content"
-        icon="star"
-        iconColor="warning"
-      />
-      <ma-content-scroller class="shadow" />
+      <div class="d-flex flex-wrap mb-4 ml-3">
+        <ma-title title="Content" icon="star" iconColor="warning" />
+
+        <div>
+          <a class="btn" @click="currentContent = 'videos'">
+            Videos
+            <span class="badge badge-light">9</span>
+          </a>
+          <a class="btn" @click="currentContent = 'backdrops'">
+            Backdrops
+            <span class="badge badge-light">9</span>
+          </a>
+          <a class="btn" @click="currentContent = 'posters'">
+            Posters
+            <span class="badge badge-light">9</span>
+          </a>
+        </div>
+      </div>
+
+      <ma-content-scroller class="shadow" :contentType="currentContent" />
     </div>
 
     <div class="py-5 ml-3 bg-light">
@@ -93,6 +107,10 @@ export default {
     MaTrailerFrame,
   },
 
+  data: () => ({
+    currentContent: 'videos',
+  }),
+
   computed: {
     currentMedia() {
       return this.$store.state.currentMedia
@@ -104,3 +122,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.currentContent {
+  background-color: red !important;
+  color: white !important;
+}
+</style>

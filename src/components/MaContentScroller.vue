@@ -1,25 +1,6 @@
 <template>
   <div>
-    <!-- <div class="d-flex overflow-auto">
-      <img
-        class="thumbnail mb-3 rounded shadow mx-1"
-        alt="content-video"
-        v-for="(video, index) in currentMedia.videos.results"
-        :key="index"
-        :src="`https://img.youtube.com/vi/${video.key}/sddefault.jpg`"
-      />
-    </div> -->
-
-    <div class="d-flex overflow-auto">
-      <ma-trailer-card
-        v-for="(video, index) in currentMedia.videos.results"
-        :key="index"
-        :media="video"
-        :fromVideo="true"
-      />
-    </div>
-
-    <div class="d-flex overflow-auto" v-if="false">
+    <div class="d-flex overflow-auto" v-if="contentType === 'backdrops'">
       <img
         class="mb-3 rounded shadow mx-1"
         alt="content-image"
@@ -29,13 +10,22 @@
       />
     </div>
 
-    <div class="d-flex overflow-auto" v-if="false">
+    <div class="d-flex overflow-auto" v-else-if="contentType === 'posters'">
       <img
         class="mb-3 rounded shadow mx-1"
         alt="content-image"
         v-for="(image, index) in currentMedia.images.posters"
         :key="index"
         :src="`https://image.tmdb.org/t/p/w200/${image.file_path}`"
+      />
+    </div>
+
+    <div class="d-flex overflow-auto" v-else>
+      <ma-trailer-card
+        v-for="(video, index) in currentMedia.videos.results"
+        :key="index"
+        :media="video"
+        :fromVideo="true"
       />
     </div>
   </div>
@@ -48,6 +38,8 @@ export default {
   components: {
     MaTrailerCard,
   },
+
+  props: ['contentType'],
 
   computed: {
     currentMedia() {

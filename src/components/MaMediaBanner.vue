@@ -30,9 +30,11 @@ export default {
   },
 
   mounted() {
-    document.getElementById(
-      'banner',
-    ).style.backgroundImage = `url('https://image.tmdb.org/t/p/original/${this.media.backdrop_path}')`
+    if (this.media.backdrop_path) {
+      document.getElementById(
+        'banner',
+      ).style.backgroundImage = `url('https://image.tmdb.org/t/p/original/${this.media.backdrop_path}')`
+    }
   },
 }
 </script>
