@@ -4,10 +4,11 @@
 
     <div class="px-3 pt-4 bg-light">
       <div class="d-flex flex-wrap py-3 bg-light">
-        <h2 class="h3 mx-auto ml-md-2 mr-md-0 text-lg-left text-default-dark">
-          <font-awesome-icon class="text-danger" icon="heart" />
-          What's Popular
-        </h2>
+        <ma-title
+          class="mx-auto ml-md-2 mr-md-0 text-lg-left"
+          title="What's Popular"
+          icon="heart"
+        />
         <ma-category-switcher
           class="mx-auto ml-md-4 text-lg-left"
           width="20"
@@ -22,10 +23,11 @@
 
     <div class="px-3 pt-4 bg-light">
       <div class="d-flex flex-wrap py-3 bg-light">
-        <h2 class="h3 mx-auto ml-md-2 mr-md-0 text-lg-left text-default-dark">
-          <font-awesome-icon class="text-info" icon="fire" />
-          Trending Movies
-        </h2>
+        <ma-title
+          class="mx-auto ml-md-2 mr-md-0 text-lg-left"
+          title="Trending Movies"
+          icon="heart"
+        />
         <ma-category-switcher
           class="mx-auto ml-md-4 text-lg-left"
           width="20"
@@ -38,10 +40,11 @@
 
     <div class="px-3 pt-4 bg-light">
       <div class="d-flex flex-wrap py-3 bg-light">
-        <h2 class="h3 mx-auto ml-md-2 mr-md-0 text-lg-left text-default-dark">
-          <font-awesome-icon class="text-info" icon="fire" />
-          Trending TV
-        </h2>
+        <ma-title
+          class="mx-auto ml-md-2 mr-md-0 text-lg-left"
+          title="Trending On TV"
+          icon="heart"
+        />
         <ma-category-switcher
           class="mx-auto ml-md-4 text-lg-left"
           width="20"
@@ -59,6 +62,7 @@
 
 <script>
 import MaCarousel from '../components/MaCarousel.vue'
+import MaTitle from '../components/MaTitle.vue'
 import MaCategorySwitcher from '../components/MaCategorySwitcher.vue'
 import MaScroller from '../components/MaScroller.vue'
 import MaVideoScroller from '../components/MaVideoScroller.vue'
@@ -68,6 +72,7 @@ import MaTrailerFrame from '../components/MaTrailerFrame.vue'
 export default {
   components: {
     MaCarousel,
+    MaTitle,
     MaTrailerFrame,
     MaCategorySwitcher,
     MaScroller,
@@ -94,12 +99,10 @@ export default {
   },
 
   created() {
-    this.$Progress.start()
     this.$store.dispatch('popularMedia', 'movies')
     this.$store.dispatch('upcomingMedia')
     this.$store.dispatch('trendingMovies', 'day')
     this.$store.dispatch('trendingTv', 'day')
-    this.$Progress.finish()
   },
 }
 </script>
