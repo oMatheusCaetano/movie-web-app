@@ -1,7 +1,7 @@
 <template>
   <div v-if="this.image.file_path">
     <img
-      class="image mb-3 rounded shadow mx-1"
+      class="image mb-3 rounded shadow mx-1 img-fluid"
       alt="content-image"
       data-toggle="modal"
       data-target="#imageModal"

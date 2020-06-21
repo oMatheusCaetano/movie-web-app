@@ -14,7 +14,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
           <router-link class="nav-link" :to="{ name: 'Home' }">
@@ -27,9 +27,20 @@
           </router-link>
         </li>
       </ul>
+      <ma-instant-search />
     </div>
   </nav>
 </template>
+
+<script>
+import MaInstantSearch from '../input/MaInstantSearch.vue'
+
+export default {
+  components: {
+    MaInstantSearch,
+  },
+}
+</script>
 
 <style scoped>
 .router-link-exact-active {
