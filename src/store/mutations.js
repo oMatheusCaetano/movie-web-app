@@ -38,4 +38,12 @@ export default {
   setCurrentPerson(state, currentPerson) {
     state.currentPerson = currentPerson
   },
+
+  sortCast({ currentPerson }) {
+    const { cast } = currentPerson.credits
+    const withoutDate = cast.filter((item) => item.release_date === '')
+    const withDate = cast.filter((item) => item.release_date !== '')
+    withDate.sort((a, b) => Number(new Date(a.release_date)) - Number(new Date(b.release_date)))
+    currentPerson.credits.cast = withoutDate.concat(withDate)
+  },
 }

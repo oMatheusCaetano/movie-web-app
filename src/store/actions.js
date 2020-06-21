@@ -40,5 +40,6 @@ export default {
   async showPerson(context, id) {
     const { data } = await Api.get(`person/${id}`)
     context.commit('setCurrentPerson', data)
+    context.commit('sortCast')
   },
 }
