@@ -3,11 +3,18 @@
     <ul class="list-group">
       <li
         class="list-group-item"
-        v-for="(media, index) in currentPerson.credits.cast"
+        v-for="(media, index) in !asCrew
+          ? currentPerson.credits.cast
+          : currentPerson.credits.crew"
         :key="index"
       >
-
-        <router-link class="text-info mr-3" to="#">
+        <router-link
+          class="text-info mr-3"
+          :to="{
+            name: 'AboutMedia',
+            params: { media_type: 'movies', media_id: media.id },
+          }"
+        >
           <font-awesome-icon icon="link" />
         </router-link>
 
@@ -15,11 +22,17 @@
           {{ media.release_date | formatYear }}
         </span>
         <span class="ml-3 mr-4 px-2" v-else>-</span>
-        <router-link class="font-weight-bold text-dark text-decoration-none" to="#" >
+        <router-link
+          class="font-weight-bold text-dark text-decoration-none"
+          :to="{
+            name: 'AboutMedia',
+            params: { media_type: 'movies', media_id: media.id },
+          }"
+        >
           <span>{{ media.title }}</span>
         </router-link>
         <span class="text-secondary"> as </span>
-        <span>{{ media.character }}</span>
+        <span>{{ !asCrew ? media.character : media.job }}</span>
       </li>
     </ul>
   </div>
@@ -27,6 +40,8 @@
 
 <script>
 export default {
+  props: ['asCrew'],
+
   computed: {
     currentPerson() {
       return this.$store.state.currentPerson

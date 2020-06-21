@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid py-4" v-if="currentPerson.credits">
-    <div class="d-flex flex-wrap">
+  <div class="pt-4" v-if="currentPerson.credits">
+    <div class="container-fluid d-flex flex-wrap">
 
       <div class="col-12 col-md-5 col-lg-4 col-xl-3 text-center">
         <ma-person-other-info />
@@ -15,10 +15,15 @@
           :media="currentPerson.credits.cast"
         />
 
+        <ma-title class="h4 mt-4" title="Acting" />
         <ma-person-credits />
+
+        <ma-title class="h4 mt-4" title="As Crew" />
+        <ma-person-credits :asCrew="true" />
       </div>
 
     </div>
+    <ma-footer class="mt-5" />
     <ma-image-modal />
   </div>
 </template>
@@ -29,6 +34,7 @@ import MaPersonBasicInfo from '../components/MaPersonBasicInfo.vue'
 import MaTitle from '../components/MaTitle.vue'
 import MaScroller from '../components/MaScroller.vue'
 import MaPersonCredits from '../components/MaPersonCredits.vue'
+import MaFooter from '../components/MaFooter.vue'
 import MaImageModal from '../components/MaImageModal.vue'
 
 export default {
@@ -38,6 +44,7 @@ export default {
     MaTitle,
     MaScroller,
     MaPersonCredits,
+    MaFooter,
     MaImageModal,
   },
 

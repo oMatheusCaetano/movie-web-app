@@ -46,4 +46,12 @@ export default {
     withDate.sort((a, b) => Number(new Date(a.release_date)) - Number(new Date(b.release_date)))
     currentPerson.credits.cast = withoutDate.concat(withDate)
   },
+
+  sortCrew({ currentPerson }) {
+    const { crew } = currentPerson.credits
+    const withoutDate = crew.filter((item) => item.release_date === '')
+    const withDate = crew.filter((item) => item.release_date !== '')
+    withDate.sort((a, b) => Number(new Date(a.release_date)) - Number(new Date(b.release_date)))
+    currentPerson.credits.crew = withoutDate.concat(withDate)
+  },
 }

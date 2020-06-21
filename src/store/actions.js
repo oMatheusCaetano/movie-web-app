@@ -41,5 +41,6 @@ export default {
     const { data } = await Api.get(`person/${id}`)
     context.commit('setCurrentPerson', data)
     context.commit('sortCast')
+    context.commit('sortCrew')
   },
 }

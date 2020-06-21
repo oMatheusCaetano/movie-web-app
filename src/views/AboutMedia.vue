@@ -152,6 +152,7 @@ export default {
   },
 
   created() {
+    this.$store.commit('clearCurrentMedia')
     this.$store.dispatch('showMedia', this.$route.params)
   },
 }
