@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import MaTrailerCard from './MaTrailerCard.vue'
+import MaTrailerCard from '../card/MaTrailerCard.vue'
 
 export default {
   components: {

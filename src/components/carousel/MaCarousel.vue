@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import MaSearchBar from './MaSearchBar.vue'
+import MaSearchBar from '../input/MaSearchBar.vue'
 
 export default {
   components: {

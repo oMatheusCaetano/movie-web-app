@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import MaReviewCard from './MaReviewCard.vue'
+import MaReviewCard from '../card/MaReviewCard.vue'
 
 export default {
   components: {

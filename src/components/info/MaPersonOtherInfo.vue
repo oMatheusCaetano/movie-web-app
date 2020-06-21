@@ -51,8 +51,8 @@
 </template>
 
 <script>
-import MaImage from './MaImage.vue'
-import MaTitle from './MaTitle.vue'
+import MaImage from '../image/MaImage.vue'
+import MaTitle from '../text/MaTitle.vue'
 
 export default {
   components: {

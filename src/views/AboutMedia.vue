@@ -102,16 +102,16 @@
 </template>
 
 <script>
-import MaMediaBanner from '../components/MaMediaBanner.vue'
-import MaTitle from '../components/MaTitle.vue'
-import MaPeopleScroller from '../components/MaPeopleScroller.vue'
-import MaMediaOtherInfo from '../components/MaMediaOtherInfo.vue'
-import MaContentScroller from '../components/MaContentScroller.vue'
-import MaReviewsScroller from '../components/MaReviewsScroller.vue'
-import MaScroller from '../components/MaScroller.vue'
-import MaFooter from '../components/MaFooter.vue'
-import MaTrailerFrame from '../components/MaTrailerFrame.vue'
-import MaImageModal from '../components/MaImageModal.vue'
+import MaMediaBanner from '../components/banner/MaMediaBanner.vue'
+import MaTitle from '../components/text/MaTitle.vue'
+import MaPeopleScroller from '../components/scroll/MaPeopleScroller.vue'
+import MaMediaOtherInfo from '../components/info/MaMediaOtherInfo.vue'
+import MaContentScroller from '../components/scroll/MaContentScroller.vue'
+import MaReviewsScroller from '../components/scroll/MaReviewsScroller.vue'
+import MaScroller from '../components/scroll/MaScroller.vue'
+import MaFooter from '../components/footer/MaFooter.vue'
+import MaTrailerFrame from '../components/modal/MaTrailerFrame.vue'
+import MaImageModal from '../components/modal/MaImageModal.vue'
 
 export default {
   components: {

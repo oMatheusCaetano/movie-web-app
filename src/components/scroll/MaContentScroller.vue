@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import MaTrailerCard from './MaTrailerCard.vue'
-import MaImage from './MaImage.vue'
+import MaTrailerCard from '../card/MaTrailerCard.vue'
+import MaImage from '../image/MaImage.vue'
 
 export default {
   components: {

@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import MaPreLoader from './components/MaPreLoader.vue'
-import MaNavbar from './components/MaNavbar.vue'
+import MaPreLoader from './components/preLoader/MaPreLoader.vue'
+import MaNavbar from './components/nav/MaNavbar.vue'
 
 export default {
   components: {

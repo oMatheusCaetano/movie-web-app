@@ -37,9 +37,9 @@
 </template>
 
 <script>
-import MaTitle from '../components/MaTitle.vue'
-import MaPersonCard from '../components/MaPersonCard.vue'
-import MaFooter from '../components/MaFooter.vue'
+import MaTitle from '../components/text/MaTitle.vue'
+import MaPersonCard from '../components/card/MaPersonCard.vue'
+import MaFooter from '../components/footer/MaFooter.vue'
 
 export default {
   components: {

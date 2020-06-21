@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import MaMediaBasicInfo from './MaMediaBasicInfo.vue'
-import MaImage from './MaImage.vue'
+import MaMediaBasicInfo from '../info/MaMediaBasicInfo.vue'
+import MaImage from '../image/MaImage.vue'
 
 export default {
   components: {

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import MaPersonCard from './MaPersonCard.vue'
+import MaPersonCard from '../card/MaPersonCard.vue'
 
 export default {
   components: {

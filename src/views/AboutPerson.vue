@@ -29,13 +29,13 @@
 </template>
 
 <script>
-import MaPersonOtherInfo from '../components/MaPersonOtherInfo.vue'
-import MaPersonBasicInfo from '../components/MaPersonBasicInfo.vue'
-import MaTitle from '../components/MaTitle.vue'
-import MaScroller from '../components/MaScroller.vue'
-import MaPersonCredits from '../components/MaPersonCredits.vue'
-import MaFooter from '../components/MaFooter.vue'
-import MaImageModal from '../components/MaImageModal.vue'
+import MaPersonOtherInfo from '../components/info/MaPersonOtherInfo.vue'
+import MaPersonBasicInfo from '../components/info/MaPersonBasicInfo.vue'
+import MaTitle from '../components/text/MaTitle.vue'
+import MaScroller from '../components/scroll/MaScroller.vue'
+import MaPersonCredits from '../components/list/MaPersonCredits.vue'
+import MaFooter from '../components/footer/MaFooter.vue'
+import MaImageModal from '../components/modal/MaImageModal.vue'
 
 export default {
   components: {

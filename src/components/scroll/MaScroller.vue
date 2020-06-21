@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import MaMediaCard from './MaMediaCard.vue'
+import MaMediaCard from '../card/MaMediaCard.vue'
 
 export default {
   components: {

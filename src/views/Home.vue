@@ -64,13 +64,13 @@
 </template>
 
 <script>
-import MaCarousel from '../components/MaCarousel.vue'
-import MaTitle from '../components/MaTitle.vue'
-import MaCategorySwitcher from '../components/MaCategorySwitcher.vue'
-import MaScroller from '../components/MaScroller.vue'
-import MaVideoScroller from '../components/MaVideoScroller.vue'
-import MaFooter from '../components/MaFooter.vue'
-import MaTrailerFrame from '../components/MaTrailerFrame.vue'
+import MaCarousel from '../components/carousel/MaCarousel.vue'
+import MaTitle from '../components/text/MaTitle.vue'
+import MaCategorySwitcher from '../components/toggle/MaCategorySwitcher.vue'
+import MaScroller from '../components/scroll/MaScroller.vue'
+import MaVideoScroller from '../components/scroll/MaVideoScroller.vue'
+import MaFooter from '../components/footer/MaFooter.vue'
+import MaTrailerFrame from '../components/modal/MaTrailerFrame.vue'
 
 export default {
   components: {

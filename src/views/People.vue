@@ -19,9 +19,9 @@
 </template>
 
 <script>
-import MaTitle from '../components/MaTitle.vue'
-import MaPersonCard from '../components/MaPersonCard.vue'
-import MaPagination from '../components/MaPagination.vue'
+import MaTitle from '../components/text/MaTitle.vue'
+import MaPersonCard from '../components/card/MaPersonCard.vue'
+import MaPagination from '../components/pagination/MaPagination.vue'
 
 export default {
   components: {
