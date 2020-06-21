@@ -1,8 +1,8 @@
 <template>
   <div class="text-white">
     <h2 class="px-2 text-center text-lg-left">
-      <span class="font-weight-bold mr-2">{{ titleOrName() }}</span>
-      <span class="text-secondary">({{ date() | formatYear }})</span>
+      <span class="font-weight-bold mr-2">{{ titleOrName }}</span>
+      <span class="text-secondary">({{ date | formatYear }})</span>
     </h2>
     <p class="mediaGenres mb-5 mx-2 text-center text-lg-left">
       <span class="mr-1" v-for="(genre, index) in media.genres" :key="genre.id">
@@ -40,26 +40,20 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   computed: {
-    media() {
-      return this.$store.state.currentMedia
-    },
+    ...mapGetters({
+      media: 'media/current',
+      titleOrName: 'media/titleOrName',
+      date: 'media/date',
+    }),
   },
 
   methods: {
     defineVideo() {
       this.$store.commit('setVideo', this.media.videos.results[0])
-    },
-
-    titleOrName() {
-      return this.media.title ? this.media.title : this.media.name
-    },
-
-    date() {
-      return this.media.release_date
-        ? this.media.release_date
-        : this.media.first_air_date
     },
   },
 }

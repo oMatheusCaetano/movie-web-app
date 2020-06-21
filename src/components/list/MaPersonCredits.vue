@@ -4,8 +4,8 @@
       <li
         class="list-group-item"
         v-for="(media, index) in !asCrew
-          ? currentPerson.credits.cast
-          : currentPerson.credits.crew"
+          ? this.person.credits.cast
+          : this.person.credits.crew"
         :key="index"
       >
         <router-link
@@ -39,15 +39,15 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   props: ['asCrew'],
 
   computed: {
-    currentPerson() {
-      return this.$store.state.currentPerson
-    },
+    ...mapGetters({
+      person: 'people/current',
+    }),
   },
 }
 </script>
-
-<style></style>

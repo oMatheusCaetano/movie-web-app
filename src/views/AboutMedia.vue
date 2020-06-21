@@ -95,13 +95,11 @@
       />
       <ma-scroller :media="currentMedia.similar.results" />
     </div>
-    <ma-footer />
-    <ma-trailer-frame />
-    <ma-image-modal />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import MaMediaBanner from '../components/banner/MaMediaBanner.vue'
 import MaTitle from '../components/text/MaTitle.vue'
 import MaPeopleScroller from '../components/scroll/MaPeopleScroller.vue'
@@ -109,9 +107,6 @@ import MaMediaOtherInfo from '../components/info/MaMediaOtherInfo.vue'
 import MaContentScroller from '../components/scroll/MaContentScroller.vue'
 import MaReviewsScroller from '../components/scroll/MaReviewsScroller.vue'
 import MaScroller from '../components/scroll/MaScroller.vue'
-import MaFooter from '../components/footer/MaFooter.vue'
-import MaTrailerFrame from '../components/modal/MaTrailerFrame.vue'
-import MaImageModal from '../components/modal/MaImageModal.vue'
 
 export default {
   components: {
@@ -122,9 +117,6 @@ export default {
     MaContentScroller,
     MaReviewsScroller,
     MaScroller,
-    MaFooter,
-    MaTrailerFrame,
-    MaImageModal,
   },
 
   data: () => ({
@@ -132,28 +124,28 @@ export default {
   }),
 
   computed: {
-    currentMedia() {
-      return this.$store.state.currentMedia
-    },
+    ...mapGetters({
+      currentMedia: 'media/current',
+    }),
   },
 
   methods: {
     quantityOfVideos() {
-      return this.$store.state.currentMedia.videos.results.length
+      return this.currentMedia.videos.results.length
     },
 
     quantityOfBackdrops() {
-      return this.$store.state.currentMedia.images.backdrops.length
+      return this.currentMedia.images.backdrops.length
     },
 
     quantityOfPosters() {
-      return this.$store.state.currentMedia.images.posters.length
+      return this.currentMedia.images.posters.length
     },
   },
 
   created() {
-    this.$store.commit('clearCurrentMedia')
-    this.$store.dispatch('showMedia', this.$route.params)
+    this.$store.commit('media/clearCurrent')
+    this.$store.dispatch('media/show', this.$route.params)
   },
 }
 </script>

@@ -2,22 +2,22 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import mutations from './mutations'
 import actions from './actions'
+import getters from './getters'
+import media from './modules/media'
+import people from './modules/people'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules: {},
+  modules: {
+    media,
+    people,
+  },
   state: {
-    currentMedia: [],
-    currentPerson: {},
-    popularPeople: [],
-    popularMedia: [],
-    upcomingMedia: [],
-    trendingMovies: [],
-    trendingTv: [],
     video: {},
     image: {},
   },
   mutations,
   actions,
+  getters,
 })

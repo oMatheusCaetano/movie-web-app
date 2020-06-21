@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   methods: {
     close() {
@@ -39,9 +41,9 @@ export default {
   },
 
   computed: {
-    video() {
-      return this.$store.state.video
-    },
+    ...mapGetters({
+      video: 'video',
+    }),
   },
 }
 </script>

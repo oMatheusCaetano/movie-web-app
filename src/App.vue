@@ -5,18 +5,27 @@
     <transition name="fader">
       <router-view />
     </transition>
-    <vue-progress-bar></vue-progress-bar>
+    <vue-progress-bar />
+    <ma-footer />
+    <ma-trailer-frame />
+    <ma-image-modal />
   </div>
 </template>
 
 <script>
 import MaPreLoader from './components/preLoader/MaPreLoader.vue'
 import MaNavbar from './components/nav/MaNavbar.vue'
+import MaFooter from './components/footer/MaFooter.vue'
+import MaTrailerFrame from './components/modal/MaTrailerFrame.vue'
+import MaImageModal from './components/modal/MaImageModal.vue'
 
 export default {
   components: {
     MaPreLoader,
     MaNavbar,
+    MaFooter,
+    MaTrailerFrame,
+    MaImageModal,
   },
 }
 </script>

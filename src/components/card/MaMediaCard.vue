@@ -4,14 +4,14 @@
       class="mediaRating position-absolute p-1 rounded-circle shadow-sm bg-gradient"
     >
       <div class="p-1 rounded-circle bg-light">
-        {{ media.vote_average | formatRate }}
+        {{ this.media.vote_average | formatRate }}
       </div>
     </div>
     <router-link
       class=" text-decoration-none font-weight-bold text-dark"
       :to="{
         name: 'AboutMedia',
-        params: { media_type: movieOrTvShow(), media_id: media.id },
+        params: { media_type: movieOrTvShow(), media_id: this.media.id },
       }"
     >
       <img
@@ -20,7 +20,9 @@
         alt="picture"
         :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
       />
-      <span class="text-default-dark">{{ titleOrName() }}</span>
+      <div>
+        <span class="text-default-dark">{{ titleOrName() }}</span>
+      </div>
     </router-link>
     <p class="text-secondary">{{ date() | formatDate }}</p>
   </div>
@@ -38,12 +40,12 @@ export default {
   methods: {
     updatePage() {
       if (this.$route.name === 'AboutMedia') {
-        this.$store.dispatch('showMedia', {
+        this.$store.dispatch('media/show', {
           media_type: this.movieOrTvShow(),
           media_id: this.media.id,
         })
       }
-      this.$store.commit('clearCurrentMedia')
+      this.$store.commit('media/clearCurrent')
     },
 
     movieOrTvShow() {

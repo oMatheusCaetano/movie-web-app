@@ -1,17 +1,17 @@
 <template>
   <div>
-    <div class="d-flex overflow-auto" v-if="contentType === 'backdrops'">
+    <div class="d-flex overflow-auto" v-if="this.contentType === 'backdrops'">
       <ma-image
-        v-for="(image, index) in currentMedia.images.backdrops"
+        v-for="(image, index) in this.currentMedia.images.backdrops"
         :key="index"
         :image="image"
         :size="400"
       />
     </div>
 
-    <div class="d-flex overflow-auto" v-else-if="contentType === 'posters'">
+    <div class="d-flex overflow-auto" v-else-if="this.contentType === 'posters'">
       <ma-image
-        v-for="(image, index) in currentMedia.images.posters"
+        v-for="(image, index) in this.currentMedia.images.posters"
         :key="index"
         :image="image"
         :size="200"
@@ -20,7 +20,7 @@
 
     <div class="d-flex overflow-auto" v-else>
       <ma-trailer-card
-        v-for="(video, index) in currentMedia.videos.results"
+        v-for="(video, index) in this.currentMedia.videos.results"
         :key="index"
         :media="video"
         :fromVideo="true"
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import MaTrailerCard from '../card/MaTrailerCard.vue'
 import MaImage from '../image/MaImage.vue'
 
@@ -42,9 +43,9 @@ export default {
   props: ['contentType'],
 
   computed: {
-    currentMedia() {
-      return this.$store.state.currentMedia
-    },
+    ...mapGetters({
+      currentMedia: 'media/current',
+    }),
   },
 }
 </script>

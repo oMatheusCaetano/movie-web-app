@@ -30,6 +30,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import MaSearchBar from '../input/MaSearchBar.vue'
 
 export default {
@@ -38,9 +39,9 @@ export default {
   },
 
   computed: {
-    images() {
-      return this.$store.state.popularMedia
-    },
+    ...mapGetters({
+      images: 'media/popular',
+    }),
   },
 }
 </script>

@@ -1,17 +1,19 @@
 <template>
   <div>
-    <h2 class="font-weight-bold mb-4">{{ currentPerson.name }}</h2>
+    <h2 class="font-weight-bold mb-4">{{ this.person.name }}</h2>
     <h4>Biography</h4>
-    <p>{{ currentPerson.biography }}</p>
+    <p>{{ this.person.biography }}</p>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   computed: {
-    currentPerson() {
-      return this.$store.state.currentPerson
-    },
+    ...mapGetters({
+      person: 'people/current',
+    }),
   },
 }
 </script>

@@ -10,7 +10,7 @@
       <div class="row">
         <ma-person-card
           class="col-6 col-md-3 col-lg-2 text-center"
-          v-for="(person, index) in people.cast"
+          v-for="(person, index) in this.currentMedia.credits.cast"
           :key="index"
           :person="person"
         />
@@ -25,33 +25,30 @@
       <div class="d-flex flex-wrap">
         <ma-person-card
           class="col-6 col-md-3 col-lg-2 text-center"
-          v-for="(person, index) in people.crew"
+          v-for="(person, index) in this.currentMedia.credits.crew"
           :key="index"
           :person="person"
         />
       </div>
     </div>
-
-    <ma-footer />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import MaTitle from '../components/text/MaTitle.vue'
 import MaPersonCard from '../components/card/MaPersonCard.vue'
-import MaFooter from '../components/footer/MaFooter.vue'
 
 export default {
   components: {
     MaTitle,
     MaPersonCard,
-    MaFooter,
   },
 
   computed: {
-    people() {
-      return this.$store.state.currentMedia.credits
-    },
+    ...mapGetters({
+      currentMedia: 'media/current',
+    }),
   },
 }
 </script>

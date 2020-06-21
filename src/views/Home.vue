@@ -57,55 +57,40 @@
       </div>
       <ma-scroller :media="trendingTvShows" />
     </div>
-
-    <ma-footer class="mt-5" />
-    <ma-trailer-frame />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import MaCarousel from '../components/carousel/MaCarousel.vue'
 import MaTitle from '../components/text/MaTitle.vue'
 import MaCategorySwitcher from '../components/toggle/MaCategorySwitcher.vue'
 import MaScroller from '../components/scroll/MaScroller.vue'
 import MaVideoScroller from '../components/scroll/MaVideoScroller.vue'
-import MaFooter from '../components/footer/MaFooter.vue'
-import MaTrailerFrame from '../components/modal/MaTrailerFrame.vue'
 
 export default {
   components: {
     MaCarousel,
     MaTitle,
-    MaTrailerFrame,
     MaCategorySwitcher,
     MaScroller,
     MaVideoScroller,
-    MaFooter,
   },
 
   computed: {
-    popularMedia() {
-      return this.$store.state.popularMedia
-    },
-
-    upcomingMedia() {
-      return this.$store.state.upcomingMedia
-    },
-
-    trendingMovies() {
-      return this.$store.state.trendingMovies
-    },
-
-    trendingTvShows() {
-      return this.$store.state.trendingTv
-    },
+    ...mapGetters({
+      popularMedia: 'media/popular',
+      upcomingMedia: 'media/upcoming',
+      trendingMovies: 'media/trendingMovies',
+      trendingTvShows: 'media/trendingTvShows',
+    }),
   },
 
   created() {
-    this.$store.dispatch('popularMedia', 'movies')
-    this.$store.dispatch('upcomingMedia')
-    this.$store.dispatch('trendingMovies', 'day')
-    this.$store.dispatch('trendingTv', 'day')
+    this.$store.dispatch('media/popular', 'movies')
+    this.$store.dispatch('media/upcoming')
+    this.$store.dispatch('media/trendingMovies', 'day')
+    this.$store.dispatch('media/trendingTv', 'day')
   },
 }
 </script>

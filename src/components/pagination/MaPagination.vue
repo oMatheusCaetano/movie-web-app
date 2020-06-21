@@ -17,11 +17,11 @@ export default {
 
   methods: {
     previousPage() {
-      this.$store.dispatch('popularPeople', --this.nextPageIndex - 1)
+      this.$store.dispatch('people/popular', --this.nextPageIndex - 1)
     },
 
     nextPage() {
-      this.$store.dispatch('popularPeople', this.nextPageIndex++)
+      this.$store.dispatch('people/popular', this.nextPageIndex++)
     },
   },
 }

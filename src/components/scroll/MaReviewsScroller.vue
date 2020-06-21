@@ -1,7 +1,7 @@
 <template>
   <div class="scroller overflow-auto">
     <ma-review-card
-      v-for="review in reviews.results"
+      v-for="review in this.currentMedia.reviews.results"
       :key="review.id"
       :review="review"
     />
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import MaReviewCard from '../card/MaReviewCard.vue'
 
 export default {
@@ -17,9 +18,9 @@ export default {
   },
 
   computed: {
-    reviews() {
-      return this.$store.state.currentMedia.reviews
-    },
+    ...mapGetters({
+      currentMedia: 'media/current',
+    }),
   },
 }
 </script>

@@ -4,7 +4,11 @@
       class="banner_content position-relative d-flex align-items-center row py-4"
     >
       <div class="col-12 col-lg-3 col-xl-4 text-center">
-        <ma-image class="banner_posterImage" :image="{ file_path: media.poster_path }" :size="300"/>
+        <ma-image
+          class="banner_posterImage"
+          :image="{ file_path: this.media.poster_path }"
+          :size="300"
+        />
       </div>
       <ma-media-basic-info class="col-12 col-lg-8 col-xl-7 mt-4 mt-lg-0" />
     </div>
@@ -12,6 +16,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import MaMediaBasicInfo from '../info/MaMediaBasicInfo.vue'
 import MaImage from '../image/MaImage.vue'
 
@@ -22,9 +27,9 @@ export default {
   },
 
   computed: {
-    media() {
-      return this.$store.state.currentMedia
-    },
+    ...mapGetters({
+      media: 'media/current',
+    }),
   },
 
   mounted() {

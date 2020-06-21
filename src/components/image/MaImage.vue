@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="this.image.file_path">
     <img
       class="image mb-3 rounded shadow mx-1"
       alt="content-image"

@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import MaTitle from '../components/text/MaTitle.vue'
 import MaPersonCard from '../components/card/MaPersonCard.vue'
 import MaPagination from '../components/pagination/MaPagination.vue'
@@ -31,13 +32,13 @@ export default {
   },
 
   computed: {
-    popularPeople() {
-      return this.$store.state.popularPeople
-    },
+    ...mapGetters({
+      popularPeople: 'people/popular',
+    }),
   },
 
   created() {
-    this.$store.dispatch('popularPeople')
+    this.$store.dispatch('people/popular')
   },
 }
 </script>

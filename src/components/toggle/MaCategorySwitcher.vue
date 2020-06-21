@@ -33,31 +33,24 @@ export default {
 
   methods: {
     loadMedia({ value }) {
-      this.$Progress.start()
       switch (value) {
         case 'On TV':
-          this.$store.dispatch('popularMedia', 'tv')
-          this.$Progress.finish()
+          this.$store.dispatch('media/popular', 'tv')
           break
         case 'Movies Today':
-          this.$store.dispatch('trendingMovies', 'day')
-          this.$Progress.finish()
+          this.$store.dispatch('media/trendingMovies', 'day')
           break
         case 'Movies This Week':
-          this.$store.dispatch('trendingMovies', 'week')
-          this.$Progress.finish()
+          this.$store.dispatch('media/trendingMovies', 'week')
           break
         case 'TV Today':
-          this.$store.dispatch('trendingTv', 'day')
-          this.$Progress.finish()
+          this.$store.dispatch('media/trendingTv', 'day')
           break
         case 'TV This Week':
-          this.$store.dispatch('trendingTv', 'week')
-          this.$Progress.finish()
+          this.$store.dispatch('media/trendingTv', 'week')
           break
         default:
-          this.$store.dispatch('popularMedia', 'movies')
-          this.$Progress.finish()
+          this.$store.dispatch('media/popular', 'movies')
       }
     },
   },

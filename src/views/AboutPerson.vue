@@ -23,19 +23,16 @@
       </div>
 
     </div>
-    <ma-footer class="mt-5" />
-    <ma-image-modal />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import MaPersonOtherInfo from '../components/info/MaPersonOtherInfo.vue'
 import MaPersonBasicInfo from '../components/info/MaPersonBasicInfo.vue'
 import MaTitle from '../components/text/MaTitle.vue'
 import MaScroller from '../components/scroll/MaScroller.vue'
 import MaPersonCredits from '../components/list/MaPersonCredits.vue'
-import MaFooter from '../components/footer/MaFooter.vue'
-import MaImageModal from '../components/modal/MaImageModal.vue'
 
 export default {
   components: {
@@ -44,18 +41,16 @@ export default {
     MaTitle,
     MaScroller,
     MaPersonCredits,
-    MaFooter,
-    MaImageModal,
   },
 
   computed: {
-    currentPerson() {
-      return this.$store.state.currentPerson
-    },
+    ...mapGetters({
+      currentPerson: 'people/current',
+    }),
   },
 
   created() {
-    this.$store.dispatch('showPerson', this.$route.params.person_id)
+    this.$store.dispatch('people/show', this.$route.params.person_id)
   },
 }
 </script>
