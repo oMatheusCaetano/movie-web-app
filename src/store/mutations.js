@@ -34,4 +34,8 @@ export default {
   setPopularPeople(state, popularPeople) {
     state.popularPeople = popularPeople
   },
+
+  setCurrentPerson(state, currentPerson) {
+    state.currentPerson = currentPerson
+  },
 }

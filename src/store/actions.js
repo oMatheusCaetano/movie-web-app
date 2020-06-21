@@ -36,4 +36,9 @@ export default {
     const { data } = await Api.get(`person/popular?page=${page}`)
     context.commit('setPopularPeople', data)
   },
+
+  async showPerson(context, id) {
+    const { data } = await Api.get(`person/${id}`)
+    context.commit('setCurrentPerson', data)
+  },
 }
