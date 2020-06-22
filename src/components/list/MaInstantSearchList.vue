@@ -7,8 +7,11 @@
       <div v-for="(item, index) in this.instantSearchResult" :key="index">
         <ma-instant-search-item :item="item" v-if="index <= 6" />
       </div>
-      <div class="item px-2 py-2 text-center shadow">
-        <router-link class="text-truncate text-dark text-decoration-none" to="#">
+      <div class="searchResults_item px-2 py-2 text-center shadow">
+        <router-link
+          class="text-truncate text-dark text-decoration-none"
+          to="#"
+        >
           See all results for '{{ this.searchValue }}'
         </router-link>
       </div>
@@ -42,15 +45,15 @@ export default {
   z-index: 1111;
   right: 2px;
   top: 45px;
-}
 
-.item {
-  transition: 0.3s;
-  cursor: pointer;
+  &_item {
+    transition: 0.3s;
+    cursor: pointer;
 
-  &:hover {
-    background-color: #d3d3d3;
-    color: #000 !important;
+    &:hover {
+      background-color: #d3d3d3;
+      color: #000 !important;
+    }
   }
 }
 </style>

@@ -7,6 +7,7 @@
         placeholder="Search"
         aria-label="Search"
         v-model="searchValue"
+        @focusout="loseFocus()"
         @keypress="search()"
         @keypress.delete="search()"
       />
@@ -37,9 +38,13 @@ export default {
   },
 
   methods: {
-    ...mapActions([
-      'search',
-    ]),
+    ...mapActions(['search']),
+
+    loseFocus() {
+      setTimeout(() => {
+        this.$store.commit('resetInstantSearchValue')
+      }, 100)
+    },
   },
 }
 </script>
