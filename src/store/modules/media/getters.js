@@ -1,4 +1,6 @@
 export default {
+  searchMoviesResult: ({ searchMoviesResult }) => searchMoviesResult,
+  searchTvResult: ({ searchTvResult }) => searchTvResult,
   current: ({ current }) => current,
   popular: ({ popular }) => popular,
   upcoming: ({ upcoming }) => upcoming,

@@ -8,6 +8,8 @@ export default {
     current: {},
     popular: [],
     upcoming: [],
+    searchMoviesResult: [],
+    searchTvResult: [],
     trendingMovies: [],
     trendingTvShows: [],
   },

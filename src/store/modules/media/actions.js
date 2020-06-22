@@ -1,6 +1,19 @@
 import Api from '../../../services/api'
 
 export default {
+  async searchMovies({ rootState, commit }) {
+    if (rootState.searchValue.length >= 2) {
+      const { data } = await Api.get(`search/movies/${rootState.searchValue}`)
+      commit('setSearchMoviesResult', data)
+    }
+  },
+
+  async searchTv({ rootState, commit }) {
+    if (rootState.searchValue.length >= 2) {
+      const { data } = await Api.get(`search/tv/${rootState.searchValue}`)
+      commit('setSearchTvResult', data)
+    }
+  },
   async show(context, params) {
     const { data } = await Api.get(`${params.media_type}/about/${params.media_id}`)
     context.commit('setCurrent', data)

@@ -7,6 +7,10 @@ export default {
     state.current = person
   },
 
+  setSearchResult(state, result) {
+    state.searchResult = result
+  },
+
   sortCast({ current }) {
     const { cast } = current.credits
     const withoutDate = cast.filter((item) => item.release_date === '')

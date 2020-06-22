@@ -16,7 +16,7 @@ export default new Vuex.Store({
   state: {
     video: {},
     image: {},
-    searchValue: '',
+    searchValue: 'blake',
     instantSearchValue: '',
     instantSearchResult: [],
   },

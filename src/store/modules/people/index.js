@@ -7,6 +7,7 @@ export default {
   state: {
     current: {},
     popular: [],
+    searchResult: [],
   },
   mutations,
   actions,

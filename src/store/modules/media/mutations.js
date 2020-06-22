@@ -11,6 +11,14 @@ export default {
     state.popular = media
   },
 
+  setSearchMoviesResult(state, result) {
+    state.searchMoviesResult = result
+  },
+
+  setSearchTvResult(state, result) {
+    state.searchTvResult = result
+  },
+
   setUpcoming(state, media) {
     state.upcoming = media
   },
