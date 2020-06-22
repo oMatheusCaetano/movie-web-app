@@ -55,8 +55,8 @@ export default {
   }
 
   &_imageBox {
-    height: 70px;
-    width: 50px;
+    height: 60px;
+    width: 40px;
   }
 }
 </style>

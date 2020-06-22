@@ -1,16 +1,21 @@
 <template>
   <div
-    class="searchResults position-absolute bg-light w-100 bg-gradient shadow"
+    class="searchResults position-absolute bg-light w-100 bg-gradient rounded shadow"
     v-if="this.searchValue.length > 2"
   >
     <div v-if="this.instantSearchResult.length > 0">
-      <ma-instant-search-item
-        v-for="(item, index) in this.instantSearchResult"
-        :key="index"
-        :item="item"
-      />
+      <div v-for="(item, index) in this.instantSearchResult" :key="index">
+        <ma-instant-search-item :item="item" v-if="index <= 6" />
+      </div>
+      <div class="item px-2 py-2 text-center shadow">
+        <router-link class="text-truncate text-dark text-decoration-none" to="#">
+          See all results for '{{ this.searchValue }}'
+        </router-link>
+      </div>
     </div>
-    <div class="text-truncate px-2 py-3">No results for '{{ this.searchValue }}'</div>
+    <div class="text-truncate px-2 py-3" v-else>
+      No results for '{{ this.searchValue }}'
+    </div>
   </div>
 </template>
 
@@ -33,8 +38,20 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .searchResults {
   z-index: 1111;
+  right: 2px;
+  top: 45px;
+}
+
+.item {
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #d3d3d3;
+    color: #000 !important;
+  }
 }
 </style>

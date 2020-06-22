@@ -1,8 +1,8 @@
 <template>
-  <div class="position-relative">
-    <form class="form-inline my-2 my-lg-0">
+  <div class="position-relative col-lg-5 col-xl-4">
+    <form class="form-inline my-2 my-lg-0 col-12">
       <input
-        class="form-control mr-sm-2"
+        class="form-control mr-sm-2 col-12"
         type="search"
         placeholder="Search"
         aria-label="Search"
