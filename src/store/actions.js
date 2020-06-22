@@ -3,7 +3,7 @@ import Api from '../services/api'
 export default {
   async search({ commit, getters }) {
     if (getters.instantSearchValue.length >= 2) {
-      const { data } = await Api.get(`search/movies/${getters.instantSearchValue}`)
+      const { data } = await Api.get(`search/multi/${getters.instantSearchValue}`)
       commit('setInstantSearchResult', data)
     }
   },

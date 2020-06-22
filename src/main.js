@@ -4,8 +4,6 @@ import router from './router'
 import store from './store'
 import './bootstrap'
 
-Vue.config.productionTip = false
-
 window.EventBus = new Vue()
 
 new Vue({

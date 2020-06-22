@@ -31,4 +31,10 @@ export default [
     name: 'PeopleFromMedia',
     component: () => import(/* webpackChunkName: "about" */ '../views/PeopleFromMedia.vue'),
   },
+
+  {
+    path: '/searchResult/:search_value',
+    name: 'SearchResult',
+    component: () => import(/* webpackChunkName: "about" */ '../views/SearchResult.vue'),
+  },
 ]

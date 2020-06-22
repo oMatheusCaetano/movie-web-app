@@ -7,8 +7,16 @@ export default {
     state.image = image
   },
 
-  setInstantSearchValue(state, result) {
-    state.instantSearchValue = result
+  setSearchValue(state, value) {
+    state.searchValue = value
+  },
+
+  resetSearchValue(state) {
+    state.searchValue = ''
+  },
+
+  setInstantSearchValue(state, value) {
+    state.instantSearchValue = value
   },
 
   resetInstantSearchValue(state) {

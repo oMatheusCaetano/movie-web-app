@@ -6,7 +6,7 @@
       <router-view />
     </transition>
     <vue-progress-bar />
-    <ma-footer />
+    <ma-footer class="mt-5" />
     <ma-trailer-frame />
     <ma-image-modal />
   </div>
