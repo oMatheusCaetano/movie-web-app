@@ -1,13 +1,15 @@
 import Api from '../services/api'
 
 export default {
-  async search(context, value) {
-    const { data } = await Api.get(`search/movies/${value}`)
-    context.commit('setInstantSearchResult', data)
+  async search({ commit, getters }) {
+    if (getters.instantSearchValue.length >= 2) {
+      const { data } = await Api.get(`search/movies/${getters.instantSearchValue}`)
+      commit('setInstantSearchResult', data)
+    }
   },
 
-  async video(context, id) {
+  async video({ commit }, id) {
     const { data } = await Api.get(`movies/${id}/videos`)
-    context.commit('setVideo', data[0])
+    commit('setVideo', data[0])
   },
 }

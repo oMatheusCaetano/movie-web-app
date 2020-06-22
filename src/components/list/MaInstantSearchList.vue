@@ -1,6 +1,6 @@
 <template>
   <div
-    class="searchResults position-absolute bg-light w-100 bg-gradient rounded shadow"
+    class="searchResults position-absolute bg-light w-100 bg-gradient rounded savengerhadow"
     v-if="this.searchValue.length > 2"
   >
     <div v-if="this.instantSearchResult.length > 0">
@@ -28,10 +28,9 @@ export default {
     MaInstantSearchItem,
   },
 
-  props: ['searchValue'],
-
   computed: {
     ...mapGetters({
+      searchValue: 'instantSearchValue',
       instantSearchResult: 'instantSearchResult',
     }),
   },

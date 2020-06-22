@@ -33,6 +33,7 @@ export default {
 
   methods: {
     updatePage() {
+      this.$store.commit('resetInstantSearchValue')
       if (this.$route.name === 'AboutMedia') {
         this.$store.dispatch('media/show', {
           media_type: 'movies',

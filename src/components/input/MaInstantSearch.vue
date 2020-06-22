@@ -6,15 +6,17 @@
         type="search"
         placeholder="Search"
         aria-label="Search"
-        v-model="value"
-        @keydown="search()"
+        v-model="searchValue"
+        @keypress="search()"
+        @keypress.delete="search()"
       />
     </form>
-    <ma-instant-search-list :searchValue="this.value" />
+    <ma-instant-search-list />
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import MaInstantSearchList from '../list/MaInstantSearchList.vue'
 
 export default {
@@ -22,25 +24,22 @@ export default {
     MaInstantSearchList,
   },
 
-  data: () => ({
-    value: '',
-  }),
+  computed: {
+    searchValue: {
+      get() {
+        return this.$store.state.instantSearchValue
+      },
+
+      set(value) {
+        this.$store.commit('setInstantSearchValue', value)
+      },
+    },
+  },
 
   methods: {
-    search() {
-      if (this.validateSearchValue()) {
-        this.$store.dispatch('search', this.value)
-      }
-    },
-
-    validateSearchValue() {
-      if (this.value.length < 2) return false
-      return true
-    },
-
-    clearValue() {
-      this.value = ''
-    },
+    ...mapActions([
+      'search',
+    ]),
   },
 }
 </script>
