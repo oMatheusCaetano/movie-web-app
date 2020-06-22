@@ -1,11 +1,15 @@
 <template>
-  <div v-if="this.image.file_path">
+  <div>
     <img
       class="image mb-3 rounded shadow mx-1 img-fluid"
       alt="content-image"
       data-toggle="modal"
       data-target="#imageModal"
-      :src="`https://image.tmdb.org/t/p/w${size}/${this.image.file_path}`"
+      :src="
+        this.image.file_path
+          ? `https://image.tmdb.org/t/p/w${size}/${this.image.file_path}`
+          : 'https://via.placeholder.com/300x400'
+      "
       @click="showImage()"
     />
   </div>
@@ -36,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 .image {
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 
   &:hover {
     filter: brightness(50%);

@@ -16,6 +16,7 @@ export default new Vuex.Store({
   state: {
     video: {},
     image: {},
+    instantSearchResult: [],
   },
   mutations,
   actions,
