@@ -1,18 +1,33 @@
 <template>
-  <div @click="updatePage()">
-    <router-link
-      class="item d-flex align-items-center pl-1 pr-2 py-2 text-decoration-none
+  <div>
+    <div v-if="itemType() !== 'person'" @click="updatePage()">
+      <router-link
+        class="item d-flex align-items-center pl-1 pr-2 py-2 text-decoration-none
           text-dark border-bottom w-100 h-100"
-      :to="{
-        name: 'AboutMedia',
-        params: { media_type: 'movies', media_id: this.item.id },
-      }"
-    >
-      <div class="item_imageBox mr-3">
-        <ma-image :image="{ file_path: this.item.poster_path }" :size="92" />
-      </div>
-      {{ this.item.title }}
-    </router-link>
+        :to="{
+          name: 'AboutMedia',
+          params: { media_type: itemType(), media_id: this.item.id },
+        }"
+      >
+        <div class="item_imageBox mr-3">
+          <ma-image :image="{ file_path: profileOrPoster() }" :size="92" />
+        </div>
+        {{ titleOrName() }}
+      </router-link>
+    </div>
+
+    <div v-else>
+      <router-link
+        class="item d-flex align-items-center pl-1 pr-2 py-2 text-decoration-none
+          text-dark border-bottom w-100 h-100"
+        :to="{ name: 'AboutPerson', params: { person_id: this.item.id } }"
+      >
+        <div class="item_imageBox mr-3">
+          <ma-image :image="{ file_path: profileOrPoster() }" :size="92" />
+        </div>
+        {{ titleOrName() }}
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -35,11 +50,26 @@ export default {
     updatePage() {
       if (this.$route.name === 'AboutMedia') {
         this.$store.dispatch('media/show', {
-          media_type: 'movies',
+          media_type: this.itemType(),
           media_id: this.item.id,
         })
       }
       this.$store.commit('media/clearCurrent')
+    },
+
+    itemType() {
+      if (this.item.title) return 'movies'
+      return this.item.poster_path ? 'tv' : 'person'
+    },
+
+    titleOrName() {
+      return this.item.title ? this.item.title : this.item.name
+    },
+
+    profileOrPoster() {
+      return this.item.poster_path
+        ? this.item.poster_path
+        : this.item.profile_path
     },
   },
 }
