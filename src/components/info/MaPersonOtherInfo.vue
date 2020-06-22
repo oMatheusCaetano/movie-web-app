@@ -2,7 +2,7 @@
   <div>
     <ma-image
       class="text-center text-md-left"
-      :image="{ file_path: this.person.profile_path }"
+      :image="this.person"
       :size="300"
     />
 

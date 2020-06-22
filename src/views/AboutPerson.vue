@@ -14,6 +14,8 @@
           v-if="currentPerson.credits"
           :media="currentPerson.credits.cast"
         />
+        <ma-title class="h4 mt-4" title="Pictures" />
+        <ma-content-scroller contentType="posters" :isPerson="true" />
 
         <ma-title class="h4 mt-4" title="Acting" />
         <ma-person-credits />
@@ -32,6 +34,7 @@ import MaPersonOtherInfo from '../components/info/MaPersonOtherInfo.vue'
 import MaPersonBasicInfo from '../components/info/MaPersonBasicInfo.vue'
 import MaTitle from '../components/text/MaTitle.vue'
 import MaScroller from '../components/scroll/MaScroller.vue'
+import MaContentScroller from '../components/scroll/MaContentScroller.vue'
 import MaPersonCredits from '../components/list/MaPersonCredits.vue'
 
 export default {
@@ -40,6 +43,7 @@ export default {
     MaPersonBasicInfo,
     MaTitle,
     MaScroller,
+    MaContentScroller,
     MaPersonCredits,
   },
 

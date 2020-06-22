@@ -1,13 +1,14 @@
 <template>
   <div>
     <img
-      class="image mb-3 rounded shadow mx-1 img-fluid"
+      class="image mb-3 rounded shadow mx-1"
       alt="content-image"
       data-toggle="modal"
       data-target="#imageModal"
+      :class="{ 'img-fluid': this.size < 200 }"
       :src="
-        this.image.file_path
-          ? `https://image.tmdb.org/t/p/w${size}/${this.image.file_path}`
+        this.image.file_path || this.image.profile_path
+          ? `https://image.tmdb.org/t/p/w${this.size}/${this.image.file_path || this.image.profile_path}`
           : 'https://via.placeholder.com/300x400'
       "
       @click="showImage()"
