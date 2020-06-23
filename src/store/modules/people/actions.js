@@ -1,11 +1,9 @@
 import Api from '../../../services/api'
 
 export default {
-  async search({ rootState, commit }) {
-    if (rootState.searchValue.length >= 2) {
-      const { data } = await Api.get(`search/person/${rootState.searchValue}`)
-      commit('setSearchResult', data)
-    }
+  async search({ rootState, commit }, searchValue) {
+    const { data } = await Api.get(`search/person/${searchValue || rootState.searchValue}`)
+    commit('setSearchResult', data)
   },
 
   async popular(context, pageNumber) {

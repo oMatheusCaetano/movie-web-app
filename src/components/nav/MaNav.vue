@@ -20,13 +20,15 @@
           v-for="(option, index) in options"
         >
           {{ option.title }}
-          <span class="badge badge-light" v-if="option.id === 'movies'">{{
-            movies.length
-          }}</span>
-          <span class="badge badge-light" v-else-if="option.id === 'tv'">{{
-            tv.length
-          }}</span>
-          <span class="badge badge-light" v-else>{{ people.length }}</span>
+          <span class="badge badge-light" v-if="option.id === 'movies'">
+            {{ movies.length }}
+          </span>
+          <span class="badge badge-light" v-else-if="option.id === 'tv'">
+            {{ tv.length }}
+          </span>
+          <span class="badge badge-light" v-else>
+            {{ people.length }}
+          </span>
         </a>
       </div>
     </div>

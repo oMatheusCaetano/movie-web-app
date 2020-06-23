@@ -7,7 +7,7 @@
       <div v-for="(item, index) in this.instantSearchResult" :key="index">
         <ma-instant-search-item :item="item" v-if="index <= 6" />
       </div>
-      <div class="searchResults_item px-2 py-2 text-center shadow">
+      <div class="searchResults_item px-2 py-2 text-center shadow" @click="makeRequest()">
         <router-link
           class="text-truncate text-dark text-decoration-none"
           to="#"
@@ -36,6 +36,19 @@ export default {
       searchValue: 'instantSearchValue',
       instantSearchResult: 'instantSearchResult',
     }),
+  },
+
+  methods: {
+    makeRequest() {
+      if (this.$route.name !== 'SearchResult') {
+        this.$store.commit('setSearchValue', this.searchValue)
+        this.$router.replace('SearchResult')
+      } else {
+        this.$store.dispatch('media/searchMovies', this.searchValue)
+        this.$store.dispatch('media/searchTv', this.searchValue)
+        this.$store.dispatch('people/search', this.searchValue)
+      }
+    },
   },
 }
 </script>

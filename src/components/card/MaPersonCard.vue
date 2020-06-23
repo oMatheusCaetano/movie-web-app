@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.person.profile_path && uncredited()">
+  <div v-if="uncredited()">
     <router-link
       class=" text-decoration-none font-weight-bold text-dark"
       :to="{ name: 'AboutPerson', params: { person_id: this.person.id }}"
@@ -7,7 +7,10 @@
       <img
         class="personImage mb-2 rounded shadow"
         alt="picture"
-        :src="`https://image.tmdb.org/t/p/w200/${this.person.profile_path}`"
+        :src="this.person.profile_path
+          ? `https://image.tmdb.org/t/p/w200/${this.person.profile_path}`
+          : 'https://via.placeholder.com/200x300'
+        "
       />
       <div>
         <span
