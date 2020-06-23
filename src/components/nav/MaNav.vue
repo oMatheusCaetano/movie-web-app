@@ -8,37 +8,25 @@
         aria-orientation="vertical"
       >
         <a
-          class="nav-link active d-flex justify-content-between"
-          id="movies-pill"
+          class="nav-link d-flex justify-content-between"
           data-toggle="pill"
-          href="#movies-reult"
           role="tab"
-          aria-controls="movies-reult"
           aria-selected="true"
+          :id="`${option.id}-pill`"
+          :href="`#${option.id}-result`"
+          :aria-controls="`${option.id}-result`"
+          :class="{ active: index === 0 }"
+          :key="index"
+          v-for="(option, index) in options"
         >
-          Movies<span class="badge badge-light">{{ this.movies.length }}</span>
-        </a>
-        <a
-          class="nav-link d-flex justify-content-between"
-          id="tv-pill"
-          data-toggle="pill"
-          href="#tv-result"
-          role="tab"
-          aria-controls="tv-result"
-          aria-selected="false"
-        >
-          TV Shows<span class="badge badge-light">{{ this.tv.length }}</span>
-        </a>
-        <a
-          class="nav-link d-flex justify-content-between"
-          id="people-pill"
-          data-toggle="pill"
-          href="#people-reult"
-          role="tab"
-          aria-controls="people-reult"
-          aria-selected="false"
-        >
-          People<span class="badge badge-light">{{ this.people.length }}</span>
+          {{ option.title }}
+          <span class="badge badge-light" v-if="option.id === 'movies'">{{
+            movies.length
+          }}</span>
+          <span class="badge badge-light" v-else-if="option.id === 'tv'">{{
+            tv.length
+          }}</span>
+          <span class="badge badge-light" v-else>{{ people.length }}</span>
         </a>
       </div>
     </div>
@@ -46,7 +34,7 @@
       <div class="tab-content" id="v-pills-tabContent">
         <div
           class="tab-pane fade show active"
-          id="movies-reult"
+          id="movies-result"
           role="tabpanel"
           aria-labelledby="movies-pill"
         >
@@ -72,7 +60,7 @@
         </div>
         <div
           class="tab-pane fade d-flex flex-wrap text-center"
-          id="people-reult"
+          id="people-result"
           role="tabpanel"
           aria-labelledby="people-pill"
         >
@@ -98,6 +86,14 @@ export default {
     MaNavCard,
     MaPersonCard,
   },
+
+  data: () => ({
+    options: [
+      { title: 'Movies', id: 'movies' },
+      { title: 'TV Shows', id: 'tv' },
+      { title: 'People', id: 'people' },
+    ],
+  }),
 
   computed: {
     ...mapGetters({
