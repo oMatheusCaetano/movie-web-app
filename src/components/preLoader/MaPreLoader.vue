@@ -6,9 +6,7 @@
       v-if="show"
     >
       <div class="preloader_loader d-flex justify-content-center align-items-center">
-        <div class="preloader_loader_inner">
-
-        </div>
+        <div class="preloader_loader_inner"></div>
       </div>
       <h3 class="font-weight-bold p-2 pl-4">Loading...</h3>
     </div>
