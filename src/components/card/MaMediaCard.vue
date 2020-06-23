@@ -16,7 +16,6 @@
     >
       <img
         class="mediaImage mb-3 rounded shadow"
-        @click="updatePage()"
         alt="picture"
         :src="`https://image.tmdb.org/t/p/w200/${this.media.poster_path}`"
       />
@@ -38,16 +37,6 @@ export default {
   },
 
   methods: {
-    updatePage() {
-      if (this.$route.name === 'AboutMedia') {
-        this.$store.dispatch('media/show', {
-          media_type: this.movieOrTvShow(),
-          media_id: this.media.id,
-        })
-      }
-      this.$store.commit('media/clearCurrent')
-    },
-
     movieOrTvShow() {
       return this.media.title ? 'movies' : 'tv'
     },

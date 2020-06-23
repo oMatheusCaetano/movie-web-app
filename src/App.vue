@@ -3,7 +3,7 @@
     <ma-pre-loader />
     <ma-navbar />
     <transition name="fader">
-      <router-view />
+      <router-view :key="$route.path" />
     </transition>
     <vue-progress-bar />
     <ma-footer class="mt-5" />

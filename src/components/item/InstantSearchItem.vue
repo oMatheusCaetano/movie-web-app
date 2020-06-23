@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="itemType() !== 'person'" @click="updatePage()">
+    <div v-if="itemType() !== 'person'">
       <router-link
         class="item d-flex align-items-center pl-1 pr-2 py-2 text-decoration-none
           text-dark border-bottom w-100 h-100"
@@ -47,16 +47,6 @@ export default {
   },
 
   methods: {
-    updatePage() {
-      if (this.$route.name === 'AboutMedia') {
-        this.$store.dispatch('media/show', {
-          media_type: this.itemType(),
-          media_id: this.item.id,
-        })
-      }
-      this.$store.commit('media/clearCurrent')
-    },
-
     itemType() {
       if (this.item.title) return 'movies'
       return this.item.poster_path ? 'tv' : 'person'

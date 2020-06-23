@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="d-flex">
     <div class="col-3">
       <div
         class="nav flex-column nav-pills"
@@ -42,7 +42,7 @@
         </a>
       </div>
     </div>
-    <div class="col-9 pr-md-4">
+    <div class="col-9">
       <div class="tab-content" id="v-pills-tabContent">
         <div
           class="tab-pane fade show active"

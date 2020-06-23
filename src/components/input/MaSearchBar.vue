@@ -30,7 +30,13 @@ export default {
 
   methods: {
     makeRequest() {
-      this.$router.replace('SearchResult')
+      if (this.$route.name !== 'SearchResult') {
+        this.$router.replace('SearchResult')
+      } else {
+        this.$store.dispatch('media/searchMovies')
+        this.$store.dispatch('media/searchTv')
+        this.$store.dispatch('people/search')
+      }
     },
   },
 }
