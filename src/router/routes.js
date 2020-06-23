@@ -33,7 +33,7 @@ export default [
   },
 
   {
-    path: '/searchResult/:search_value',
+    path: '/searchResult',
     name: 'SearchResult',
     component: () => import(/* webpackChunkName: "about" */ '../views/SearchResult.vue'),
   },

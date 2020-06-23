@@ -16,7 +16,7 @@
           aria-controls="movies-reult"
           aria-selected="true"
         >
-          Movies<span class="badge badge-light">4</span>
+          Movies<span class="badge badge-light">{{ this.movies.length }}</span>
         </a>
         <a
           class="nav-link d-flex justify-content-between"
@@ -27,7 +27,7 @@
           aria-controls="tv-result"
           aria-selected="false"
         >
-          TV Shows<span class="badge badge-light">4</span>
+          TV Shows<span class="badge badge-light">{{ this.tv.length }}</span>
         </a>
         <a
           class="nav-link d-flex justify-content-between"
@@ -38,7 +38,7 @@
           aria-controls="people-reult"
           aria-selected="false"
         >
-          People<span class="badge badge-light">4</span>
+          People<span class="badge badge-light">{{ this.people.length }}</span>
         </a>
       </div>
     </div>
@@ -50,7 +50,12 @@
           role="tabpanel"
           aria-labelledby="movies-pill"
         >
-          <ma-nav-card class="mb-3" />
+          <ma-nav-card
+            v-for="(movie, index) in this.movies"
+            :key="index"
+            class="mb-3"
+            :item="movie"
+          />
         </div>
         <div
           class="tab-pane fade"
@@ -58,15 +63,25 @@
           role="tabpanel"
           aria-labelledby="tv-pill"
         >
-          <ma-nav-card class="mb-3" />
+          <ma-nav-card
+            v-for="(tvShow, index) in this.tv"
+            :key="index"
+            class="mb-3"
+            :item="tvShow"
+          />
         </div>
         <div
-          class="tab-pane fade"
+          class="tab-pane fade d-flex flex-wrap text-center"
           id="people-reult"
           role="tabpanel"
           aria-labelledby="people-pill"
         >
-          <ma-nav-card class="mb-3" />
+          <ma-person-card
+            class="mb-3 mx-1 col-md-5 col-lg-3 col-xl-2"
+            v-for="(person, index) in this.people"
+            :key="index"
+            :person="person"
+          />
         </div>
       </div>
     </div>
@@ -74,13 +89,28 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import MaNavCard from '../card/MaNavCard.vue'
+import MaPersonCard from '../card/MaPersonCard.vue'
 
 export default {
   components: {
     MaNavCard,
+    MaPersonCard,
+  },
+
+  computed: {
+    ...mapGetters({
+      movies: 'media/searchMoviesResult',
+      tv: 'media/searchTvResult',
+      people: 'people/searchResult',
+    }),
+  },
+
+  created() {
+    this.$store.dispatch('media/searchMovies')
+    this.$store.dispatch('media/searchTv')
+    this.$store.dispatch('people/search')
   },
 }
 </script>
-
-<style></style>

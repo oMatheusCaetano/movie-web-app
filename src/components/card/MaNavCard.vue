@@ -7,21 +7,22 @@
         <img
           class="image rounded"
           alt="content-image"
-          src="https://via.placeholder.com/300x400"
+          :src="
+            this.item.poster_path
+              ? `https://image.tmdb.org/t/p/w200/${this.item.poster_path}`
+              : 'https://via.placeholder.com/300x400'
+          "
         />
       </div>
       <div
         class="d-flex flex-column col-12 col-md-9 col-lg-10 text-center text-md-left px-0 py-2"
       >
         <div class="d-flex flex-column">
-          <span class="font-weight-bold h5">Vingadores: Guerra Infinita</span>
-          <span class="text-secondary">Seg 16 fev</span>
+          <span class="font-weight-bold h5">{{ titleOrName() }}</span>
+          <span class="text-secondary">{{ this.date() | formatDate }}</span>
         </div>
         <p class="mt-3 text-truncate">
-          Homem de Ferro, Thor, Hulk e os Vingadores se unem para combater seu
-          inimigo mais poderoso, o maligno Thanos. Em uma missão para coletar
-          todas as seis pedras infinitas, Thanos planeja usá-las para infligir
-          sua vontade maléfica sobre a realidade.
+          {{ this.item.overview }}
         </p>
       </div>
     </div>
@@ -30,6 +31,22 @@
 
 <script>
 export default {
+  props: {
+    item: {
+      type: Object,
+      required: true,
+    },
+  },
+
+  methods: {
+    titleOrName() {
+      return this.item.title ? this.item.title : this.item.name
+    },
+
+    date() {
+      return this.item.title ? this.item.release_date : this.item.first_air_date
+    },
+  },
 }
 </script>
 

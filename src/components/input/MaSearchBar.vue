@@ -30,8 +30,7 @@ export default {
 
   methods: {
     makeRequest() {
-      console.log('search value', this.searchValue)
-      this.$router.replace({ name: 'SearchResult', params: { search_value: this.searchValue } })
+      this.$router.replace('SearchResult')
     },
   },
 }
