@@ -1,8 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: 'http://localhost:8000/',
-  headers: {
-    'Content-Type': 'application/json;multipart/form-data;',
-  },
+  baseURL: 'https://caetano-movie-api.herokuapp.com/',
 })
