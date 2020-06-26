@@ -60,4 +60,4 @@ http://localhost:8080/
 ```
 
 ## Back-End
-Para acessar o código do back-end desta aplicação, basta clicar neste [link](https://github.com/caetanoMatheus/movie-web-app).
+Para acessar o código do back-end desta aplicação, basta clicar neste [link](https://github.com/caetanoMatheus/movie-api).
